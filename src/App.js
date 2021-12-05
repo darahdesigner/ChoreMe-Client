@@ -38,7 +38,7 @@ function App() {
 
   return (
     <div>
-      <TopNav clickLogout={clearToken}/>
+      <TopNav clickLogout={clearToken}></TopNav>
       {protectedViews()}
     </div>
   );

@@ -22,6 +22,9 @@ const ChoreTable = (props) => {
                     <td>{chore.title}</td>
                     <td>{chore.description}</td>
                     <td>{chore.amount}</td>
+                    <td>{chore.deadline}</td>
+                    <td>{chore.assign}</td>
+                    <td>{chore.complete}</td>
                     <td>
                         <Button onClick={() => {props.editUpdateChore(chore); props.updateOn()}} color='warning'>Update</Button>
                         <Button color='danger' onClick={() => {deleteChore(chore)}}>Delete</Button>
