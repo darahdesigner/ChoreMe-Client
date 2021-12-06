@@ -133,7 +133,8 @@
 .createbox {
   border: 1px solid black;
   background: yellow;
-  height: 100%;
+  width: 100%;
+  display: flex;
  
 }
 .createInputs {
@@ -143,8 +144,6 @@
 .choretable {
   border: 1px solid black;
   width: 50%;
-  
-
 }
 
 .formstyle {
