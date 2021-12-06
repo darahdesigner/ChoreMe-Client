@@ -3,6 +3,7 @@ import { Container, Row, Col } from "reactstrap";
 import ChoreCreate from "./ChoreCreate";
 import ChoreTable from "./ChoreTable";
 import ChoreEdit from "./ChoreEdit";
+import '../App.css'
 
 const ChoreIndex = (props) => {
   const [chores, setChores] = useState([]);
@@ -40,8 +41,8 @@ const ChoreIndex = (props) => {
   }, []);
 
   return (
-    <Container>
-      <Row>
+    <Container className='chorecon'>
+      <Row className="createchores">
         <Col md="3">
           <ChoreCreate fetchChores={fetchChores} token={props.token} />
         </Col>

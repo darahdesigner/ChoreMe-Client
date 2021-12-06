@@ -4,6 +4,7 @@ import "./App.css";
 import Auth from "./auth/auth";
 import Signup from "./auth/Signup";
 import ChoreIndex from "./chores/ChoreIndex";
+import Login from "./auth/Login";
 
 
 
@@ -32,7 +33,7 @@ function App() {
     return sessionToken === localStorage.getItem("token") ? (
       <ChoreIndex token={sessionToken} />
     ) : (
-      <Auth updateToken={updateToken} />
+      <Signup updateToken={updateToken} />
     );
   };
 

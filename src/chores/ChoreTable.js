@@ -17,8 +17,7 @@ const ChoreTable = (props) => {
     const choreMapper = () => {
         return props.chores.map((chore, index) => {
             return(
-                <tr key={index}>
-                    <th scope='row'>{chore.id}</th>
+                <tr key={index}>a
                     <td>{chore.title}</td>
                     <td>{chore.description}</td>
                     <td>{chore.amount}</td>
@@ -40,7 +39,7 @@ const ChoreTable = (props) => {
         <Table striped>
             <thead>
                 <tr>
-                    <th>#</th>
+                    
                     <th>Title</th>
                     <th>Description</th>
                     <th>Amount</th>
