@@ -21,19 +21,14 @@ const Main = styled.div`
   background-color: #e25c48;
 `;
 
-const Logo = styled.h1`
-  position: absolute;
-  left: 0;
-  margin-left: 100px;
-  letter-spacing: 5px;
-`;
+
 
 const TopNav = (props) => {
   return (
     <div>
       <Main className="main">
         <Content className="content">
-          <Logo>ChoreMe</Logo>
+          <h1 className='logo'>ChoreMe</h1>
           <button className='logoutbtn' type="submit">
             Login
           </button>

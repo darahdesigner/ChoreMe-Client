@@ -9,7 +9,7 @@ const Auth = (props) => {
 
   return (
     <div className="auth">
-  <Signup/>
+  <Login updateToken={props.updateToken}/>
     </div>
   );
 };

@@ -47,7 +47,7 @@ const ChoreCreate = (props) => {
     <div className="choretable">
       <Form className="choreform" onSubmit={handleSubmit}>
         <div className="createbox">
-          <h3>Create a chore</h3>
+          <h3 className='createtitle'>Create a chore</h3>
           <FormGroup className="formstyle">
             <Label htmlFor="title" />
             <h3>Title:</h3>
@@ -102,7 +102,7 @@ const ChoreCreate = (props) => {
               value={complete}
             />
           </FormGroup>
-          <Button type="submit">Click to Submit</Button>
+          <Button className='createbtn' type="submit">Create</Button>
         </div>
       </Form>
     </div>
