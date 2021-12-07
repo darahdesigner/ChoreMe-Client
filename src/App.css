@@ -163,6 +163,7 @@ font-family: 'Yantramanav', sans-serif; */
 } */
 
 .formstyle {
+  text-align: center;
 }
 
 .createbtn {
@@ -230,4 +231,28 @@ font-family: 'Yantramanav', sans-serif; */
   font-size: 20px;
   font-family: 'Sora', sans-serif;
   color: #6de64c;
+}
+
+.chorehistorybox {
+  display: flex;
+  margin-top: 30px;
+  justify-content: center;
+}
+
+.historytitle {
+  margin-top: 60px;
+  font-size: 30px;
+  font-family: 'Yantramanav', sans-serif;
+  color: #6de64c;
+}
+
+.chorelabels {
+  font-size: 15px;
+  color: #6de64c;
+  font-family: 'Sora', sans-serif;
+  text-align: center;
+}
+
+.date {
+  font-size: 10px;
 }

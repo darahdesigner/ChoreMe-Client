@@ -1,5 +1,6 @@
 import React from "react";
 import { Table, Button } from "reactstrap";
+import "../App.css";
 
 const ChoreTable = (props) => {
   const deleteChore = (chore) => {
@@ -49,24 +50,12 @@ const ChoreTable = (props) => {
     });
   };
   return (
-    <>
-      <h3>Chore History</h3>
-      <hr />
+    <div className='chorehistorybox'>
+      <h3 className='historytitle'>Chore History</h3>
       <Table>
-        {/* <thead>
-                <tr>
-                    
-                    <th>Title</th>
-                    <th>Description</th>
-                    <th>Amount</th>
-                    <th>Deadline</th>
-                    <th>Assigned</th>
-                    <th>Complete</th>
-                </tr>
-            </thead> */}
         <tbody>{choreMapper()}</tbody>
       </Table>
-    </>
+    </div>
   );
 };
 
