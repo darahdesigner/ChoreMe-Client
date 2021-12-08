@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { Form, FormGroup, Label, Input, Button } from "reactstrap";
 import "../App.css";
+import APIURL from "../helpers/environment";
 
 const Login = (props) => {
   const [username, setUsername] = useState("");
@@ -9,7 +10,7 @@ const Login = (props) => {
 
   let handleSubmit = (event) => {
     event.preventDefault();
-    fetch("http://localhost:3000/user/register", {
+    fetch(`${APIURL}/user/register`, {
       method: "POST",
       body: JSON.stringify({
         user: { username: username, passwordhash: password },
@@ -17,7 +18,7 @@ const Login = (props) => {
       headers: new Headers({
         "Content-Type": "application/json",
       }),
-    })
+    } )
       .then((response) => response.json())
       .then((data) => {
         props.updateToken(data.sessionToken);

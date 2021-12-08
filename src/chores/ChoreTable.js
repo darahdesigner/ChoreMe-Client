@@ -1,10 +1,11 @@
 import React from "react";
 import { Table, Button } from "reactstrap";
 import "../App.css";
+import APIURL from "../helpers/environment";
 
 const ChoreTable = (props) => {
   const deleteChore = (chore) => {
-    fetch(`http://localhost:3000/chore/${chore.id}`, {
+    fetch(`${APIURL}/chore/${chore.id}`, {
       method: "DELETE",
       headers: new Headers({
         "Content-Type": "application/json",
