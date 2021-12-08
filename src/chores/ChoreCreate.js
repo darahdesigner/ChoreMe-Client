@@ -47,10 +47,10 @@ const ChoreCreate = (props) => {
     <div className="choretable">
       <Form className="choreform" onSubmit={handleSubmit}>
         <div className="createbox">
-          <h3>Create a chore</h3>
+          <h3 className='createtitle'>Create a chore</h3>
           <FormGroup className="formstyle">
             <Label htmlFor="title" />
-            <h3>Title:</h3>
+            <h3 className='chorelabels'>Title:</h3>
             <Input
               className="createInputs"
               onChange={(e) => setTitle(e.target.value)}
@@ -60,7 +60,7 @@ const ChoreCreate = (props) => {
           </FormGroup>
           <FormGroup className="formstyle">
             <Label htmlFor="description" />
-            <h3>Description:</h3>
+            <h3 className='chorelabels'>Description:</h3>
             <Input className="createInputs"
               onChange={(e) => setDescription(e.target.value)}
               value={description}
@@ -68,7 +68,7 @@ const ChoreCreate = (props) => {
           </FormGroup>
           <FormGroup className="formstyle">
             <Label htmlFor="amount" />
-            <h3>Amount:</h3>
+            <h3 className='chorelabels'>Amount:</h3>
             <Input className="createInputs"
               onChange={(e) => setAmount(e.target.value)}
               name="amount"
@@ -77,7 +77,7 @@ const ChoreCreate = (props) => {
           </FormGroup>
           <FormGroup className="formstyle">
             <Label htmlFor="deadline" />
-            <h3>Deadline:<span className='date'>(yyyy/mm/dd)</span></h3>
+            <h3 className='chorelabels'>Deadline:<span className='date'>(yyyy/mm/dd)</span></h3>
             <Input className="createInputs"
               onChange={(e) => setDeadline(e.target.value)}
               name="deadline"
@@ -86,7 +86,7 @@ const ChoreCreate = (props) => {
           </FormGroup>
           <FormGroup className="formstyle">
             <Label htmlFor="assign" />
-            <h3>Assigned To:</h3>
+            <h3 className='chorelabels'>Assigned To:</h3>
             <Input className="createInputs"
               onChange={(e) => setAssign(e.target.value)}
               name="assign"
@@ -95,14 +95,14 @@ const ChoreCreate = (props) => {
           </FormGroup>
           <FormGroup className="formstyle">
             <Label htmlFor="complete" />
-            <h3>Complete?:</h3>
+            <h3 className='chorelabels'>Complete?:</h3>
             <Input className="createInputs"
               onChange={(e) => setComplete(e.target.value)}
               name="complete"
               value={complete}
             />
           </FormGroup>
-          <Button type="submit">Click to Submit</Button>
+          <Button className='createbtn' type="submit">Create</Button>
         </div>
       </Form>
     </div>
