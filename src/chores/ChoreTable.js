@@ -36,7 +36,6 @@ const ChoreTable = (props) => {
                 Update
               </Button>
               <Button
-                color="danger"
                 onClick={() => {
                   deleteChore(chore);
                 }}
@@ -50,8 +49,8 @@ const ChoreTable = (props) => {
     });
   };
   return (
-    <div className='chorehistorybox'>
-      <h3 className='historytitle'>Chore History</h3>
+    <div className="chorehistorybox">
+      <h3 className="historytitle">Chore History</h3>
       <Table>
         <tbody>{choreMapper()}</tbody>
       </Table>
