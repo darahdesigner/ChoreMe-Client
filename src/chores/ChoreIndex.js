@@ -3,7 +3,7 @@ import { Container, Row, Col } from "reactstrap";
 import ChoreCreate from "./ChoreCreate";
 import ChoreTable from "./ChoreTable";
 import ChoreEdit from "./ChoreEdit";
-import '../App.css'
+import "../App.css";
 
 const ChoreIndex = (props) => {
   const [chores, setChores] = useState([]);
@@ -41,12 +41,10 @@ const ChoreIndex = (props) => {
   }, []);
 
   return (
-    <Container className='chorecon'>
-      <Row className="createchores">
-        <Col md="3">
+    <Container className="chorecon">
+      <Col className="createchores">
+        <Col className="choreStyle">
           <ChoreCreate fetchChores={fetchChores} token={props.token} />
-        </Col>
-        <Col md="9">
           <ChoreTable
             chores={chores}
             editUpdateChore={editUpdateChore}
@@ -54,6 +52,9 @@ const ChoreIndex = (props) => {
             fetchChores={fetchChores}
             token={props.token}
           />
+        </Col>
+        <Col>
+          
         </Col>
         {updateActive ? (
           <ChoreEdit
@@ -65,7 +66,7 @@ const ChoreIndex = (props) => {
         ) : (
           <></>
         )}
-      </Row>
+      </Col>
     </Container>
   );
 };
