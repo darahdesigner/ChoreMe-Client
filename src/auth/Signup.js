@@ -57,7 +57,7 @@ const Signup = (props) => {
             <Button className="signupbtn" type="submit">
               Sign Up
             </Button>
-            <p className='AlreadyUser'>Already a user? Login <span className='link'>here</span>!</p>
+            <p className='AlreadyUser'><b>Already a user? Login</b> <span className='link'>here</span>!</p>
           </div>
         </Form>
       </div>
