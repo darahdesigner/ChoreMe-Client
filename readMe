@@ -1,0 +1,22 @@
+
+   
+Project Name: ChoreMe Client [Client side for a Chore Application that allows you to create and assign Chores].
+
+Technology Used:
+
+                Postgres: Communicated with database.
+                Express: Handles routing for the server.
+                React: Using React to connect this server to the front-end client side.
+                Node: Manages packages.
+
+Team Member #1  [Will Harris]
+
+              GitHub.com/WilliamBHarris, LinkedIn: none., Portfolio: https://github.com/WilliamBHarris/Portfolio.git
+
+Assigned Tasks
+
+Client Side
+Completion Date: in progress
+[12/08/2021]: Created the react app.  Created all the component files inside of the application.
+              Was able to get all the fetches, props, and state, setup.  Did styling to the Signup, Login,
+              Auth, and the Chore page. 
