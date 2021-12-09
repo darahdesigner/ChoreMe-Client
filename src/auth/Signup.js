@@ -25,11 +25,12 @@ const Signup = (props) => {
   };
 
   return (
-    <div className="auth">
+    <div className="auth"><h1 className='signupline'>Create and organize your chores in one easy place!</h1>
       <div className="authcon">
+        
         <Form className="form" onSubmit={handleSubmit}>
           <div className="formgroups">
-            <h1 className="title">SIGNUP</h1>
+            <h1 className="title">Sign up for your free account.</h1>
             <FormGroup>
               <Label className="user" htmlFor="username">
                 Username:
@@ -55,7 +56,7 @@ const Signup = (props) => {
               />
             </FormGroup>
             <Button className="signupbtn" type="submit">
-              Sign Up
+              Create Account
             </Button>
             <p className='AlreadyUser'>Already a user? Login <span className='link'>here</span>!</p>
           </div>
