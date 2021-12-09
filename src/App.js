@@ -33,7 +33,7 @@ function App() {
     return sessionToken === localStorage.getItem("token") ? (
       <ChoreIndex token={sessionToken} />
     ) : (
-      <Signup updateToken={updateToken} />
+      <Auth updateToken={updateToken} />
     );
   };
 

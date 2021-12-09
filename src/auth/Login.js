@@ -9,7 +9,7 @@ const Login = (props) => {
 
   let handleSubmit = (event) => {
     event.preventDefault();
-    fetch("http://localhost:3000/user/login", {
+    fetch("http://localhost:3000/user/register", {
       method: "POST",
       body: JSON.stringify({
         user: { username: username, passwordhash: password },
@@ -25,11 +25,12 @@ const Login = (props) => {
   };
 
   return (
-    <div className="auth">
+    <div className="auth"><h1 className='signupline'>Welcome back!</h1>
       <div className="authcon">
+        
         <Form className="form" onSubmit={handleSubmit}>
           <div className="formgroups">
-            <h1 className="title">LOGIN</h1>
+            <h1 className="title">Login.</h1>
             <FormGroup>
               <Label className="user" htmlFor="username">
                 Username:
