@@ -18,15 +18,15 @@ const ChoreTable = (props) => {
       return (
         <tr className="historymain" key={index}>
           <div className="historybox">
-            <td>{chore.title}</td>
-            <td>{chore.description}</td>
-            <td>{chore.amount}</td>
-            <td>{chore.deadline}</td>
-            <td>{chore.assign}</td>
-            <td>{chore.complete}</td>
+            <td className='cTitle'>{chore.title}</td>
+            <td className='cDescription'>Description:<span className='chorecontent'> {chore.description}</span></td>
+            <td className='cAmount'>Amount: <span className='chorecontent'>{chore.amount}</span></td>
+            <td className='cDeadline'>Deadline: <span className='chorecontent'>{chore.deadline}</span></td>
+            <td className='cAssign'>Assigned To: <span className='chorecontent'>{chore.assign}</span></td>
+            <td className='cComplete'>Complete?: <span className='chorecontent'>{chore.complete}</span></td>
 
-            <td>
-              <Button
+            <td className='buttons'>
+              <Button className="buttonStyle"
                 onClick={() => {
                   props.editUpdateChore(chore);
                   props.updateOn();
@@ -36,6 +36,7 @@ const ChoreTable = (props) => {
                 Update
               </Button>
               <Button
+              className="buttonStyle"
                 onClick={() => {
                   deleteChore(chore);
                 }}
@@ -51,8 +52,8 @@ const ChoreTable = (props) => {
   return (
     <div className="chorehistorybox">
       <h3 className="historytitle">Chore History</h3>
-      <Table>
-        <tbody>{choreMapper()}</tbody>
+      <Table className='cTable'>
+        <tbody className='choreCards'>{choreMapper()}</tbody>
       </Table>
     </div>
   );
