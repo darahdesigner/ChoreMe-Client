@@ -1,0 +1,60 @@
+
+   
+Project Name: ChoreMe Client [Client side for a Chore Application that allows you to create and assign Chores].
+
+Technology Used:
+
+                Postgres: Communicated with database.
+                Express: Handles routing for the server.
+                React: Using React to connect this server to the front-end client side.
+                Node: Manages packages.
+
+Team Member #1  [Will Harris]
+
+              GitHub.com/WilliamBHarris, LinkedIn: none., Portfolio: https://github.com/WilliamBHarris/Portfolio.git
+
+Assigned Tasks
+
+Client Side
+Completion Date: in progress
+[12/08/2021]: Created the react app.  Created all the component files inside of the application.
+              Was able to get all the fetches, props, and state, setup.  Did styling to the Signup, Login,
+              Auth, and the Chore page. 
+[12/09/2021]: ChoreTable.js -  Did some base styling to the  
+
+
+Team Member #2  [Ebone Rich]
+
+              GitHub, LinkedIn, Portfolio links
+
+Assigned Tasks
+Make the date input reformat into a standard format.
+
+Completion Date: WIP / [completion date]
+[date]: [focused items / files] */consider your commit message
+[date]: [focused items / files]
+[date]: [focused items / files]
+Ex: 11/29: Navbar.jsx – build out routing and styling.
+Endpoint 2
+Completion Date: WIP / [completion date]
+[date]: [focused items / files]
+[date]: [focused items / files]
+*additional / optional
+ 
+
+Team Member #3  [Darah Snider]
+
+              GitHub, LinkedIn, and Portfolio links
+
+Assigned Tasks
+Creating the landing page. 
+Completion Date: WIP / [completion date]
+[date]: [focused items / files] */consider your commit message
+[date]: [focused items / files]
+[date]: [focused items / files]
+Ex: 11/29: Navbar.jsx – build out routing and styling.
+Endpoint 2
+Completion Date: WIP / [completion date]
+[date]: [focused items / files]
+[date]: [focused items / files]
+*additional / optional
