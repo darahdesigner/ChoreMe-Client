@@ -222,9 +222,9 @@ font-family: 'Yantramanav', sans-serif; */
   font-family: 'Sora', sans-serif;
 }
 
-.choretable {
+/* .choretable {
   
-}
+} */
 
 .createtitle {
   text-align: center;
@@ -255,4 +255,8 @@ font-family: 'Yantramanav', sans-serif; */
 
 .date {
   font-size: 10px;
+}
+
+script {
+  display: none;
 }
