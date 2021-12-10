@@ -17,10 +17,10 @@ Assigned Tasks
 
 Client Side
 Completion Date: in progress
-[12/08/2021]: Created the react app.  Created all the component files inside of the application.
+[12/03/2021]: Created the react app.  Created all the component files inside of the application.
               Was able to get all the fetches, props, and state, setup.  Did styling to the Signup, Login,
               Auth, and the Chore page. 
-[12/09/2021]: ChoreTable.js -  Did some base styling to the  
+[12/09/2021]: ChoreTable.js -  Did some base styling to the created chore cards.  Made the cards show up in 3 columns. 
 
 
 Team Member #2  [Ebone Rich]
