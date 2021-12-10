@@ -37,7 +37,7 @@ const ChoreIndex = (props) => {
   };
 
   useEffect(() => {
-    fetchChores();
+ //   fetchChores();
   }, []);
 
   return (
