@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Button, Form, FormGroup, Label, Input } from "reactstrap";
 import "../App.css";
+import APIURL from "../helpers/environment";
+import { compareAsc, format } from 'date-fns'
 
 const ChoreCreate = (props) => {
   const [description, setDescription] = useState("");
@@ -12,7 +14,7 @@ const ChoreCreate = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch("http://localhost:3000/chore/", {
+    fetch(`${APIURL}/chore/`, {
       method: "POST",
       body: JSON.stringify({
         chore: {
@@ -77,7 +79,7 @@ const ChoreCreate = (props) => {
           </FormGroup>
           <FormGroup className="formstyle">
             <Label htmlFor="deadline" />
-            <h3 className='chorelabels'>Deadline:<span className='date'>(yyyy/mm/dd)</span></h3>
+            <h3 className='chorelabels'>Deadline:<span className='date'> (mm/dd/yyyy)</span></h3>
             <Input className="createInputs"
               onChange={(e) => setDeadline(e.target.value)}
               name="deadline"

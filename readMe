@@ -17,6 +17,47 @@ Assigned Tasks
 
 Client Side
 Completion Date: in progress
-[12/08/2021]: Created the react app.  Created all the component files inside of the application.
-              Was able to get all the fetches, props, and state, setup.  Did styling to the Signup, Login,
-              Auth, and the Chore page. 
+[12/03/2021]: Created the react app.  Created all the component files inside of the application.
+              Was able to get all the fetches, props, and state setup.  
+[12/04/2021]: Did styling to the Signup, Login, Auth, and the Chore page.
+[12/05/2021]: Added more content to the Signup, Login component's styling.
+[12/07/2021]: Worked exclusively on the ChoreCreate component. Have a create chore table, with results that render in to cards.
+[12/09/2021]:  Made the created chore cards break a new line when you have more than 3. Did some setup of the styling of the cards.
+[12/10/2021]:  Began doing the routing, Added the logic to the App.js file. Created a Showcase.js for our landing page.  Links between Login and Signup are working.  On signup, made it check for a token to see the choreIndex.  Working on Signup status still.
+
+
+Team Member #2  [Ebone Rich]
+
+              GitHub, LinkedIn, Portfolio links
+
+Assigned Tasks
+Make the date input reformat into a standard format.
+
+Completion Date: WIP / [completion date]
+[date]: [focused items / files] */consider your commit message
+[date]: [focused items / files]
+[date]: [focused items / files]
+Ex: 11/29: Navbar.jsx – build out routing and styling.
+Endpoint 2
+Completion Date: WIP / [completion date]
+[date]: [focused items / files]
+[date]: [focused items / files]
+*additional / optional
+ 
+
+Team Member #3  [Darah Snider]
+
+              GitHub, LinkedIn, and Portfolio links
+
+Assigned Tasks
+Creating the landing page. 
+Completion Date: WIP / [completion date]
+[date]: [focused items / files] */consider your commit message
+[date]: [focused items / files]
+[date]: [focused items / files]
+Ex: 11/29: Navbar.jsx – build out routing and styling.
+Endpoint 2
+Completion Date: WIP / [completion date]
+[date]: [focused items / files]
+[date]: [focused items / files]
+*additional / optional
