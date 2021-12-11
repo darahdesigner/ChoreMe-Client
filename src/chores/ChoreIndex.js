@@ -42,6 +42,7 @@ const ChoreIndex = (props) => {
 
   return (
     <div className="chorecon">
+      <h1>{chores.title}</h1>
       <div className="createchores">
         <div className="choreStyle">
           <ChoreCreate sessionToken={props.sessionToken} fetchChores={fetchChores} token={props.token} />

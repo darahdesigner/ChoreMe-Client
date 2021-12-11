@@ -31,24 +31,7 @@ function App() {
     setSessionToken("");
   };
 
-  // const tokenChecker = async () => {
-  //   if(localStorage.getItem('Authorization')) {
-  //     setSessionToken(localStorage.getItem('Authorization'));
-  //     if (sessionToken !== '') navigate('/')
-  //   }
-  // }
-
-  // useEffect(() => {
-  //   tokenChecker();
-  // }, []);
-
-  // const protectedViews = () => {
-  //   return sessionToken === localStorage.getItem("token") ? (
-  //     <ChoreIndex token={sessionToken} />
-  //   ) : (
-  //     <Auth updateToken={updateToken} />
-  //   );
-  // };
+  
 
   return (
     
