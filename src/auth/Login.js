@@ -1,11 +1,7 @@
 import React, { useState } from "react";
 import { Form, FormGroup, Label, Input, Button } from "reactstrap";
 import "../App.css";
-<<<<<<< HEAD
-import APIURL from "../helpers/environment";
-=======
 import { Link, useNavigate } from "react-router-dom";
->>>>>>> 9c989cb7eb498233d38de94adbac8e9abc1bf7c0
 
 const Login = (props) => {
   const [username, setUsername] = useState("");
@@ -15,11 +11,7 @@ const Login = (props) => {
   let handleSubmit = (event) => {
     let statusCode;
     event.preventDefault();
-<<<<<<< HEAD
-    fetch(`${APIURL}/user/register`, {
-=======
     fetch("http://localhost:3000/user/login", {
->>>>>>> 9c989cb7eb498233d38de94adbac8e9abc1bf7c0
       method: "POST",
       body: JSON.stringify({
         user: { username: username, passwordhash: password },
@@ -27,17 +19,12 @@ const Login = (props) => {
       headers: new Headers({
         "Content-Type": "application/json",
       }),
-<<<<<<< HEAD
-    } )
-      .then((response) => response.json())
-=======
     })
       .then((response) => {
         statusCode = response.status;
         console.log(statusCode);
         return response.json();
       })
->>>>>>> 9c989cb7eb498233d38de94adbac8e9abc1bf7c0
       .then((data) => {
         console.log(props.sessionToken);
         props.updateToken(data.sessionToken);

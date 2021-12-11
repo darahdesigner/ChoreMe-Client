@@ -28,13 +28,17 @@ const Signup = (props) => {
       })
       .then((data) => {
         props.updateToken(data.sessionToken);
-<<<<<<< HEAD
+
         console.log(data)
       }).catch(err =>{
         console.log(err)
-=======
+
         if (statusCode !== '201') navigate('/choreindex')
->>>>>>> 9c989cb7eb498233d38de94adbac8e9abc1bf7c0
+        console.log(data)
+      }).catch(err =>{
+        console.log(err)
+        if (statusCode !== '201') navigate('/choreindex')
+
       });
   };
 
@@ -74,9 +78,9 @@ const Signup = (props) => {
             <Button className="signupbtn" type="submit">
               Create Account
             </Button>
-<<<<<<< HEAD
+
             <p className='AlreadyUser'><b>Already a user? Login</b> <span className='link'>here</span>!</p>
-=======
+
             <p className="AlreadyUser">
               Already a user? Login
               <span className="link">
@@ -84,7 +88,7 @@ const Signup = (props) => {
               </span>
               !
             </p>
->>>>>>> 9c989cb7eb498233d38de94adbac8e9abc1bf7c0
+
           </div>
         </Form>
       </div>
