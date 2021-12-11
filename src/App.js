@@ -77,8 +77,6 @@ function App() {
                 />
               }
             />
-
-            {/* {protectedViews()} */}
           </Routes>
         </div>
       </Router>

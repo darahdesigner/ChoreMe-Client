@@ -9,9 +9,7 @@ const Main = styled.div`
 
 ReactDOM.render(
   <Main>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
+    <App />
   </Main>,
   document.getElementById("root")
 );

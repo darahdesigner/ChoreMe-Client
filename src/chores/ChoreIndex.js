@@ -45,7 +45,11 @@ const ChoreIndex = (props) => {
       <h1>{chores.title}</h1>
       <div className="createchores">
         <div className="choreStyle">
-          <ChoreCreate sessionToken={props.sessionToken} fetchChores={fetchChores} token={props.token} />
+          <ChoreCreate
+            sessionToken={props.sessionToken}
+            fetchChores={fetchChores}
+            token={props.token}
+          />
           <ChoreTable
             sessionToken={props.sessionToken}
             chores={chores}
@@ -55,12 +59,10 @@ const ChoreIndex = (props) => {
             token={props.token}
           />
         </div>
-        <div>
-          
-        </div>
+        <div></div>
         {updateActive ? (
           <ChoreEdit
-          sessionToken={props.sessionToken}
+            sessionToken={props.sessionToken}
             choreToUpdate={choreToUpdate}
             updateOff={updateOff}
             token={props.token}
