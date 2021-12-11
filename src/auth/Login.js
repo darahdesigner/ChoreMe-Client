@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import styled from "styled-components";
 import { Form, FormGroup, Label, Input, Button } from "reactstrap";
 import "../App.css";
+import { Link } from "react-router-dom";
 
 const Login = (props) => {
   const [username, setUsername] = useState("");
@@ -58,6 +58,10 @@ const Login = (props) => {
             <Button className="signupbtn" type="submit">
               Login
             </Button>
+            <p className="AlreadyUser">
+              Haven't signed up yet? Signup
+              <span className="link"><Link to='/signup'>here</Link></span>!
+            </p>
           </div>
         </Form>
       </div>
