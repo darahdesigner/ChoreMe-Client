@@ -123,6 +123,26 @@ font-family: 'Yantramanav', sans-serif; */
   color: #26353e;
   transition: 1s;
 }
+.loginbtn {
+  border: none;
+  height: 60px;
+  width: 100px;
+  margin-right: 100px;
+  background-color: #26353e;
+  border-radius: 10px;
+  font-family: "Montserrat", sans-serif;
+  color: #6de64c;
+  letter-spacing: 1px;
+  font-size: 15px;
+  display: none;
+}
+
+.loginbtn:hover {
+  background: #e1b899;
+  color: #26353e;
+  transition: 1s;
+  
+}
 
 .chorecon {
   /* background-image: url("./assets/blob-scene-haikei.svg");

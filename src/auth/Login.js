@@ -1,15 +1,17 @@
 import React, { useState } from "react";
-import styled from "styled-components";
 import { Form, FormGroup, Label, Input, Button } from "reactstrap";
 import "../App.css";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = (props) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   let handleSubmit = (event) => {
+    let statusCode;
     event.preventDefault();
-    fetch("http://localhost:3000/user/register", {
+    fetch("http://localhost:3000/user/login", {
       method: "POST",
       body: JSON.stringify({
         user: { username: username, passwordhash: password },
@@ -18,16 +20,21 @@ const Login = (props) => {
         "Content-Type": "application/json",
       }),
     })
-      .then((response) => response.json())
+      .then((response) => {
+        statusCode = response.status;
+        console.log(statusCode);
+        return response.json();
+      })
       .then((data) => {
+        console.log(props.sessionToken);
         props.updateToken(data.sessionToken);
+        if (statusCode !== '200') navigate("/choreindex");
       });
   };
-
   return (
-    <div className="auth"><h1 className='signupline'>Welcome back!</h1>
+    <div className="auth">
+      <h1 className="signupline">Welcome back!</h1>
       <div className="authcon">
-        
         <Form className="form" onSubmit={handleSubmit}>
           <div className="formgroups">
             <h1 className="title">Login.</h1>
@@ -36,7 +43,7 @@ const Login = (props) => {
                 Username:
               </Label>
               <Input
-                placeholder='Enter a username'
+                placeholder="Enter a username"
                 className="signupInputs"
                 onChange={(e) => setUsername(e.target.value)}
                 name="username"
@@ -48,7 +55,7 @@ const Login = (props) => {
                 Password:
               </Label>
               <Input
-                placeholder='Enter a password'
+                placeholder="Enter a password"
                 className="signupInputs"
                 onChange={(e) => setPassword(e.target.value)}
                 name="password"
@@ -58,6 +65,13 @@ const Login = (props) => {
             <Button className="signupbtn" type="submit">
               Login
             </Button>
+            <p className="AlreadyUser">
+              Haven't signed up yet? Signup
+              <span className="link">
+                <Link to="/signup">here</Link>
+              </span>
+              !
+            </p>
           </div>
         </Form>
       </div>

@@ -34,7 +34,7 @@ const ChoreEdit = (props) => {
       }),
       headers: new Headers({
         "Content-Type": "application/json",
-        Authorization: `Bearer ${props.token}`,
+        Authorization: `Bearer ${props.sessionToken}`,
       }),
     }).then((res) => {
       props.fetchChores();
