@@ -21,16 +21,30 @@ const TopNav = (props) => {
       <Main className="main">
         <Content className="content">
           <h1 className="logo">ChoreMe</h1>
-          <Link to='/login'><button className="logoutbtn" type="submit">
-            Login
-          </button></Link>
-          <button
-            className="logoutbtn"
-            type="submit"
-            onClick={props.clickLogout}
-          >
-            Logout
-          </button>
+          {props.sessionToken !== "" ? (
+            ""
+          ) : (
+            <Link to="/login">
+              <button className="logoutbtn" type="submit">
+                Login
+              </button>
+            </Link>
+          )}
+          <Link to="/">
+          {props.sessionToken !== "" ? (
+            <Link to="/">
+            <button onClick={props.clickLogout} className="logoutbtn" type="submit">
+              Logout
+            </button>
+          </Link>
+          ) : (
+            <Link to="/signup">
+              <button className="logoutbtn" type="submit">
+                Signup
+              </button>
+            </Link>
+          )}
+          </Link>
         </Content>
       </Main>
     </div>

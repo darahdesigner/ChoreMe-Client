@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Form, FormGroup, Label, Input, Button } from "reactstrap";
-import { Link, navigate, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../App.css";
 
 const Signup = (props) => {
@@ -22,11 +22,12 @@ const Signup = (props) => {
     })
       .then((response) => {
         statusCode = response.status;
+        console.log(statusCode)
         return response.json();
       })
       .then((data) => {
         props.updateToken(data.sessionToken);
-        if (statusCode == '201') navigate('/choreindex')
+        if (statusCode !== '201') navigate('/choreindex')
       });
   };
 

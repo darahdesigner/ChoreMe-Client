@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Container, Col } from "reactstrap";
+// import { Container, Col } from "reactstrap";
 import ChoreCreate from "./ChoreCreate";
 import ChoreTable from "./ChoreTable";
 import ChoreEdit from "./ChoreEdit";
@@ -27,7 +27,7 @@ const ChoreIndex = (props) => {
       method: "GET",
       headers: new Headers({
         "Content-Type": "application/json",
-        Authorization: `Bearer ${props.token}`,
+        Authorization: `Bearer ${props.sessionToken}`,
       }),
     })
       .then((res) => res.json())
@@ -41,23 +41,25 @@ const ChoreIndex = (props) => {
   }, []);
 
   return (
-    <Container className="chorecon">
-      <Col className="createchores">
-        <Col className="choreStyle">
-          <ChoreCreate fetchChores={fetchChores} token={props.token} />
+    <div className="chorecon">
+      <div className="createchores">
+        <div className="choreStyle">
+          <ChoreCreate sessionToken={props.sessionToken} fetchChores={fetchChores} token={props.token} />
           <ChoreTable
+            sessionToken={props.sessionToken}
             chores={chores}
             editUpdateChore={editUpdateChore}
             updateOn={updateOn}
             fetchChores={fetchChores}
             token={props.token}
           />
-        </Col>
-        <Col>
+        </div>
+        <div>
           
-        </Col>
+        </div>
         {updateActive ? (
           <ChoreEdit
+          sessionToken={props.sessionToken}
             choreToUpdate={choreToUpdate}
             updateOff={updateOff}
             token={props.token}
@@ -66,8 +68,8 @@ const ChoreIndex = (props) => {
         ) : (
           <></>
         )}
-      </Col>
-    </Container>
+      </div>
+    </div>
   );
 };
 

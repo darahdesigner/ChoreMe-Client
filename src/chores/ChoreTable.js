@@ -1,5 +1,5 @@
 import React from "react";
-import { Table, Button } from "reactstrap";
+import { Button } from "reactstrap";
 import "../App.css";
 
 const ChoreTable = (props) => {
@@ -8,7 +8,7 @@ const ChoreTable = (props) => {
       method: "DELETE",
       headers: new Headers({
         "Content-Type": "application/json",
-        Authorization: `Bearer ${props.token}`,
+        Authorization: `Bearer ${props.sessionToken}`,
       }),
     }).then(() => props.fetchChores());
   };
@@ -16,45 +16,58 @@ const ChoreTable = (props) => {
   const choreMapper = () => {
     return props.chores.map((chore, index) => {
       return (
-        <tr className="historymain" key={index}>
-          <div className="historybox">
-            <td className='cTitle'>{chore.title}</td>
-            <td className='cDescription'>Description:<span className='chorecontent'> {chore.description}</span></td>
-            <td className='cAmount'>Amount: <span className='chorecontent'>{chore.amount}</span></td>
-            <td className='cDeadline'>Deadline: <span className='chorecontent'>{chore.deadline}</span></td>
-            <td className='cAssign'>Assigned To: <span className='chorecontent'>{chore.assign}</span></td>
-            <td className='cComplete'>Complete?: <span className='chorecontent'>{chore.complete}</span></td>
-
-            <td className='buttons'>
-              <Button className="buttonStyle"
-                onClick={() => {
-                  props.editUpdateChore(chore);
-                  props.updateOn();
-                }}
-                color="warning"
-              >
-                Update
-              </Button>
-              <Button
-              className="buttonStyle"
-                onClick={() => {
-                  deleteChore(chore);
-                }}
-              >
-                Delete
-              </Button>
-            </td>
+        // <div className="historybox">
+        <div className="historymain" key={index}>
+          <div key={chore.id} className="cTitle">
+            {chore.title}
           </div>
-        </tr>
+          <div key="{description}" className="cDescription">
+            Description:
+            <span className="chorecontent"> {chore.description}</span>
+          </div>
+          <div key="{amount}" className="cAmount">
+            Amount: <span className="chorecontent">{chore.amount}</span>
+          </div>
+          <div key="{deadline}" className="cDeadline">
+            Deadline: <span className="chorecontent">{chore.deadline}</span>
+          </div>
+          <div key="{assign}" className="cAssign">
+            Assigned To: <span className="chorecontent">{chore.assign}</span>
+          </div>
+          <div key="{complete}" className="cComplete">
+            Complete?: <span className="chorecontent">{chore.complete}</span>
+          </div>
+
+          <div className="buttons">
+            <Button
+              className="buttonStyle"
+              onClick={() => {
+                props.editUpdateChore(chore);
+                props.updateOn();
+              }}
+              color="warning"
+            >
+              Update
+            </Button>
+            <Button
+              className="buttonStyle"
+              onClick={() => {
+                deleteChore(chore);
+              }}
+            >
+              Delete
+            </Button>
+          </div>
+        </div>
       );
     });
   };
   return (
     <div className="chorehistorybox">
       <h3 className="historytitle">Chore History</h3>
-      <Table className='cTable'>
-        <tbody className='choreCards'>{choreMapper()}</tbody>
-      </Table>
+      <div className="cTable">
+        <div className="choreCards">{choreMapper()}</div>
+      </div>
     </div>
   );
 };
