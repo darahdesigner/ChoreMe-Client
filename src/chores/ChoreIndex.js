@@ -4,6 +4,7 @@ import ChoreCreate from "./ChoreCreate";
 import ChoreTable from "./ChoreTable";
 import ChoreEdit from "./ChoreEdit";
 import "../App.css";
+import APIURL from '../helpers/enviroment';
 
 const ChoreIndex = (props) => {
   const [chores, setChores] = useState([]);
@@ -23,7 +24,7 @@ const ChoreIndex = (props) => {
   };
 
   const fetchChores = () => {
-    fetch("http://localhost:3000/chore", {
+    fetch(`${APIURL}/chore`, {
       method: "GET",
       headers: new Headers({
         "Content-Type": "application/json",

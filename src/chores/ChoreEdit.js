@@ -9,6 +9,7 @@ import {
   ModalHeader,
   ModalBody,
 } from "reactstrap";
+import APIURL from '../helpers/enviroment';
 
 const ChoreEdit = (props) => {
   const [editDesc, setEditDesc] = useState(props.choreToUpdate.description);
@@ -20,7 +21,7 @@ const ChoreEdit = (props) => {
 
   const choreUpdate = (event, chore) => {
     event.preventDefault();
-    fetch(`http://localhost:3000/chore/${props.choreToUpdate.id}`, {
+    fetch(`${APIURL}/chore/${props.choreToUpdate.id}`, {
       method: "PUT",
       body: JSON.stringify({
         chore: {

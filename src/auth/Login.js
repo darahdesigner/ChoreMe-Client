@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Form, FormGroup, Label, Input, Button } from "reactstrap";
 import "../App.css";
 import { Link, useNavigate } from "react-router-dom";
+import APIURL from '../helpers/enviroment';
 
 const Login = (props) => {
   const [username, setUsername] = useState("");
@@ -11,7 +12,7 @@ const Login = (props) => {
   let handleSubmit = (event) => {
     let statusCode;
     event.preventDefault();
-    fetch("http://localhost:3000/user/login", {
+    fetch(`${APIURL}/user/login`, {
       method: "POST",
       body: JSON.stringify({
         user: { username: username, passwordhash: password },
@@ -26,7 +27,7 @@ const Login = (props) => {
         return response.json();
       })
       .then((data) => {
-        console.log(props.sessionToken);
+        console.log(data.sessionToken);
         props.updateToken(data.sessionToken);
         if (statusCode !== '200') navigate("/choreindex");
       });

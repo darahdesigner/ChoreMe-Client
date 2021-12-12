@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Button, Form, FormGroup, Label, Input } from "reactstrap";
 import "../App.css";
+import APIURL from '../helpers/enviroment';
 
 const ChoreCreate = (props) => {
   const [description, setDescription] = useState("");
@@ -13,7 +14,7 @@ const ChoreCreate = (props) => {
   const handleSubmit = (e) => {
     console.log(props.sessionToken)
     e.preventDefault();
-    fetch("http://localhost:3000/chore/", {
+    fetch(`${APIURL}/chore/`, {
       method: "POST",
       body: JSON.stringify({
         chore: {

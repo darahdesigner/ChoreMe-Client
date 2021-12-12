@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import { Button, Input, FormGroup, Form } from "reactstrap";
 import "../App.css";
+import APIURL from '../helpers/enviroment';
 
 const ChoreTable = (props) => {
   const [assign, setAssign] = useState("");
   const [byName, setByName] = useState("");
 
   const deleteChore = (chore) => {
-    fetch(`http://localhost:3000/chore/${chore.id}`, {
+    fetch(`${APIURL}/chore/${chore.id}`, {
       method: "DELETE",
       headers: new Headers({
         "Content-Type": "application/json",
@@ -71,7 +72,7 @@ const ChoreTable = (props) => {
 
   const handleSearch = (e) => {
     e.preventDefault();
-    fetch(`http://localhost:3000/chore/${byName}`, {
+    fetch(`${APIURL}/chore/${byName}`, {
       method: "GET",
       headers: new Headers({
         "Content-Type": "application/json",
