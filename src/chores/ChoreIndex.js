@@ -23,8 +23,8 @@ const ChoreIndex = (props) => {
     setUpdateActive(false);
   };
 
-  const fetchChores = () => {
-    fetch(`${APIURL}/chore`, {
+  const fetchChores = async () => {
+    await fetch(`${APIURL}/chore`, {
       method: "GET",
       headers: new Headers({
         "Content-Type": "application/json",

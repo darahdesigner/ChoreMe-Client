@@ -8,6 +8,7 @@ import ChoreIndex from "./chores/ChoreIndex";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import ChoreCreate from "./chores/ChoreCreate";
 import ChoreTable from "./chores/ChoreTable";
+// import Footer from "./home/Footer";
 
 
 function App() {
@@ -79,6 +80,7 @@ function App() {
             />
           </Routes>
         </div>
+        {/* <Footer /> */}
       </Router>
     </>
   );
