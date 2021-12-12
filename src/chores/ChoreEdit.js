@@ -43,12 +43,12 @@ const ChoreEdit = (props) => {
     });
   };
   return (
-    <Modal isOpen={true}>
-      <ModalHeader>Log a Chore</ModalHeader>
-      <ModalBody>
-        <Form onSubmit={choreUpdate}>
+    <Modal className='updateMainBox' isOpen={true}>
+      <ModalHeader className='updateTitle'>Update a Chore</ModalHeader>
+      <ModalBody >
+        <Form className='updateBody' onSubmit={choreUpdate}>
           <FormGroup>
-            <Label htmlFor="title">Edit Title:</Label>
+            <Label className='chorelabelsAssign' htmlFor="title">Edit Title:</Label>
             <Input
               name="title"
               value={editTit}
@@ -56,7 +56,7 @@ const ChoreEdit = (props) => {
             />
           </FormGroup>
           <FormGroup>
-            <Label htmlFor="description">Edit Description:</Label>
+            <Label className='chorelabelsAssign' htmlFor="description">Edit Description:</Label>
             <Input
               name="description"
               value={editDesc}
@@ -64,23 +64,25 @@ const ChoreEdit = (props) => {
             />
           </FormGroup>
           <FormGroup>
-            <Label htmlFor="amount">Edit Amount:</Label>
+            <Label className='chorelabelsAssign' htmlFor="amount">Edit Amount:</Label>
             <Input
+            type='number'
               name="amount"
               value={editAmo}
               onChange={(e) => setEditAmo(e.target.value)}
             ></Input>
           </FormGroup>
           <FormGroup>
-            <Label htmlFor="deadline">Edit Deadline:</Label>
+            <Label className='chorelabelsAssign' htmlFor="deadline">Edit Deadline:</Label>
             <Input
+            type='date'
               name="deadline"
               value={editDead}
               onChange={(e) => setEditDead(e.target.value)}
             ></Input>
           </FormGroup>
           <FormGroup>
-            <Label htmlFor="assign">Edit Assigned:</Label>
+            <Label className='chorelabelsAssign' htmlFor="assign">Edit Assigned:</Label>
             <Input
               name="assign"
               value={editAssign}
@@ -88,7 +90,7 @@ const ChoreEdit = (props) => {
             ></Input>
           </FormGroup>
           <FormGroup>
-            <Label htmlFor="complete">Edit Completion:</Label>
+            <Label className='chorelabelsAssign' htmlFor="complete">Edit Completion:</Label>
             <Input
               onChange={(e) => setEditComplete(e.target.value)}
               name="complete"
@@ -100,8 +102,8 @@ const ChoreEdit = (props) => {
               <option value="Progress">In Progress</option>
             </Input>
           </FormGroup>
-
-          <Button type="submit">Update the chore!</Button>
+          <div className='buttonStyle2'>
+          <Button className="updateBtn" type="submit">Update</Button></div>
         </Form>
       </ModalBody>
     </Modal>
