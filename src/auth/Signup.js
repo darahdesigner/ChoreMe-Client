@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import { Form, FormGroup, Label, Input, Button } from "reactstrap";
 import { Link, useNavigate } from "react-router-dom";
 import "../App.css";
-import APIURL from '../helpers/enviroment';
+import APIURL from "../helpers/enviroment";
 
 const Signup = (props) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  const [errorMessage, setErrorMessage] = useState("");
 
   let handleSubmit = (event) => {
     let statusCode;
@@ -23,12 +24,17 @@ const Signup = (props) => {
     })
       .then((response) => {
         statusCode = response.status;
-        console.log(statusCode)
+        console.log(statusCode);
+        if (statusCode == "500") {
+          setErrorMessage("Failed to register, please try again.");
+          console.log(errorMessage);
+        }
+
         return response.json();
       })
       .then((data) => {
         props.updateToken(data.sessionToken);
-        if (statusCode !== '201') navigate('/choreindex')
+        if (statusCode == "201") navigate("/choreindex");
       });
   };
 
@@ -40,13 +46,20 @@ const Signup = (props) => {
       <div className="authcon">
         <Form className="form" onSubmit={handleSubmit}>
           <div className="formgroups">
-            <h1 className="title">Sign up for your free account.</h1>
+            <h1 className="title">Sign up for your free account</h1>
+            {errorMessage !== "" ? (
+              <p className="errorMessage">{errorMessage}</p>
+            ) : (
+              ""
+            )}
             <FormGroup>
               <Label className="user" htmlFor="username">
-                Username:
+                Email:
               </Label>
               <Input
-                placeholder="Enter a username"
+                required
+                type="email"
+                placeholder="Enter an email"
                 className="signupInputs"
                 onChange={(e) => setUsername(e.target.value)}
                 name="username"
@@ -58,6 +71,8 @@ const Signup = (props) => {
                 Password:
               </Label>
               <Input
+                required
+                type="password"
                 placeholder="Enter a password"
                 className="signupInputs"
                 onChange={(e) => setPassword(e.target.value)}
@@ -71,7 +86,9 @@ const Signup = (props) => {
             <p className="AlreadyUser">
               Already a user? Login
               <span className="link">
-                <Link to="/login">here</Link>
+                <Link className="alink" to="/login">
+                  here
+                </Link>
               </span>
               !
             </p>

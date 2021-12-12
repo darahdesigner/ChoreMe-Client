@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import { Form, FormGroup, Label, Input, Button } from "reactstrap";
 import "../App.css";
 import { Link, useNavigate } from "react-router-dom";
-import APIURL from '../helpers/enviroment';
+import APIURL from "../helpers/enviroment";
 
 const Login = (props) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  const [errorMessage, setErrorMessage] = useState("");
 
   let handleSubmit = (event) => {
     let statusCode;
@@ -24,12 +25,18 @@ const Login = (props) => {
       .then((response) => {
         statusCode = response.status;
         console.log(statusCode);
+        if (statusCode == "401") {
+          setErrorMessage("Incorrect email or password");
+          console.log(errorMessage);
+        } else if (statusCode == "500") {
+          setErrorMessage("Internal error, try again later");
+        }
         return response.json();
       })
       .then((data) => {
-        console.log(data.sessionToken);
+        console.log(errorMessage);
         props.updateToken(data.sessionToken);
-        if (statusCode !== '200') navigate("/choreindex");
+        if (statusCode == "200") navigate("/choreindex");
       });
   };
   return (
@@ -38,13 +45,20 @@ const Login = (props) => {
       <div className="authcon">
         <Form className="form" onSubmit={handleSubmit}>
           <div className="formgroups">
-            <h1 className="title">Login.</h1>
+            <h1 className="title">Login to your account</h1>
+            {errorMessage !== "" ? (
+              <p className="errorMessage">{errorMessage}</p>
+            ) : (
+              ""
+            )}
             <FormGroup>
               <Label className="user" htmlFor="username">
-                Username:
+                Email:
               </Label>
               <Input
-                placeholder="Enter a username"
+                required
+                type="email"
+                placeholder="Enter an email"
                 className="signupInputs"
                 onChange={(e) => setUsername(e.target.value)}
                 name="username"
@@ -56,6 +70,8 @@ const Login = (props) => {
                 Password:
               </Label>
               <Input
+                required
+                type="password"
                 placeholder="Enter a password"
                 className="signupInputs"
                 onChange={(e) => setPassword(e.target.value)}
@@ -68,8 +84,10 @@ const Login = (props) => {
             </Button>
             <p className="AlreadyUser">
               Haven't signed up yet? Signup
-              <span className="link">
-                <Link to="/signup">here</Link>
+              <span>
+                <Link className="alink" to="/signup">
+                  here
+                </Link>
               </span>
               !
             </p>
