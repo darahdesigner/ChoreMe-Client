@@ -42,6 +42,8 @@ ChoreTable.js - Added a new fetch to get all the user's chores. Created the butt
 
 Added the placeholder text for final challenge for MVP (running total of amounts paid.)
 
+ChoreEdit.js - Got the general styling, and placement laid out. Changed all the inputs to match the CreateChore inputs. 
+
 
 
 
