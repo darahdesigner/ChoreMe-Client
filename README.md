@@ -38,6 +38,10 @@ Started working on the keep running Amount total MVP requirement.
 
 [12/12/2021]:  Signup.js, Login.js - Inputs are now all required, changed username to Email. Email input requires email. Password inputs are hidden.  Added conditionals to check for status, and display errorMessage if login or signup is unsuccessful.
 
+ChoreTable.js - Added a new fetch to get all the user's chores. Created the button, and styled it into the page. I also re did the Create chore box, and changed all the inputs around. Date input takes in a date from a drop down calendar, Amount input only allows numbers. And all are required.
+
+Added the placeholder text for final challenge for MVP (running total of amounts paid.)
+
 
 
 
