@@ -65,7 +65,9 @@ Team Member #3  [Darah Snider]
               GitHub, LinkedIn, and Portfolio links
 
 Assigned Tasks
-Creating the landing page. 
+[WIP]: [Creating the landing page]
+[WIP]: [Creating footer]
+[WIP]: [Creating contact page w/ team github, linkedin, and portfolio pages]
 Completion Date: WIP / [completion date]
 [date]: [focused items / files] */consider your commit message
 [date]: [focused items / files]
