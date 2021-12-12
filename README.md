@@ -36,6 +36,8 @@ Added a search by name input on the choretable. -- This to try to complete the M
 
 Started working on the keep running Amount total MVP requirement.
 
+[12/12/2021]:  Signup.js, Login.js - Inputs are now all required, changed username to Email. Email input requires email. Password inputs are hidden.  Added conditionals to check for status, and display errorMessage if login or signup is unsuccessful.
+
 
 
 
