@@ -1,70 +1,78 @@
-# Getting Started with Create React App
+Project Name: ChoreMe Client [Client side for a Chore Application that allows you to create and assign Chores].
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Technology Used:
 
-## Available Scripts
+                Postgres: Communicated with database.
+                Express: Handles routing for the server.
+                React: Using React to connect this server to the front-end client side.
+                Node: Manages packages.
 
-In the project directory, you can run:
+Team Member #1  [Will Harris]
 
-### `npm start`
+              GitHub.com/WilliamBHarris, LinkedIn: none., Portfolio: https://github.com/WilliamBHarris/Portfolio.git
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Assigned Tasks
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Client Side
+Completion Date: in progress
+[12/03/2021]: Created the react app.  Created all the component files inside of the application.
+              Was able to get all the fetches, props, and state setup.  
+              
+[12/04/2021]: Did styling to the Signup, Login, Auth, and the Chore page.
 
-### `npm test`
+[12/05/2021]: Added more content to the Signup, Login component's styling.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+[12/07/2021]: Worked exclusively on the ChoreCreate component. Have a create chore table, with results that render in to cards.
 
-### `npm run build`
+[12/09/2021]:  Made the created chore cards break a new line when you have more than 3. Did some setup of the styling of the cards.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+[12/10/2021]:  Began doing the routing, Added the logic to the App.js file. Created a Showcase.js for our landing page.  Links between Login 
+and Signup are working.  On signup, made it check for a token to see the choreIndex.  Working on Signup status still.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+[12/11/2021]: Fixed Navbar buttons to display the proper link depending on logged in status. Got the routing setup in App.js and passed props around.
+Also fixed a couple bugs in the fetches. Linked the Signup and Login pages. Also got them to redirect to Chore table when successfull.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Added a search by name input on the choretable. -- This to try to complete the MVP requirement of being able to sort peoples chores.
 
-### `npm run eject`
+Started working on the keep running Amount total MVP requirement.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+[12/12/2021]:  Signup.js, Login.js - Inputs are now all required, changed username to Email. Email input requires email. Password inputs are hidden.  Added conditionals to check for status, and display errorMessage if login or signup is unsuccessful.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+Team Member #2  [Ebone Rich]
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+              GitHub, LinkedIn, Portfolio links
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Assigned Tasks
+Make the date input reformat into a standard format.
 
-### Code Splitting
+Completion Date: WIP / [completion date]
+[date]: [focused items / files] */consider your commit message
+[date]: [focused items / files]
+[date]: [focused items / files]
+Ex: 11/29: Navbar.jsx – build out routing and styling.
+Endpoint 2
+Completion Date: WIP / [completion date]
+[date]: [focused items / files]
+[date]: [focused items / files]
+*additional / optional
+ 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Team Member #3  [Darah Snider]
 
-### Analyzing the Bundle Size
+              GitHub, LinkedIn, and Portfolio links
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Assigned Tasks
+Creating the landing page. 
+Completion Date: WIP / [completion date]
+[date]: [focused items / files] */consider your commit message
+[date]: [focused items / files]
+[date]: [focused items / files]
+Ex: 11/29: Navbar.jsx – build out routing and styling.
+Endpoint 2
+Completion Date: WIP / [completion date]
+[date]: [focused items / files]
+[date]: [focused items / files]
+*additional / optional
