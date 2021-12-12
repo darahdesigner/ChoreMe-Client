@@ -9,7 +9,7 @@ import {
   ModalHeader,
   ModalBody,
 } from "reactstrap";
-import APIURL from "../helpers/environment";
+import APIURL from '../helpers/enviroment';
 
 const ChoreEdit = (props) => {
   const [editDesc, setEditDesc] = useState(props.choreToUpdate.description);
@@ -35,7 +35,7 @@ const ChoreEdit = (props) => {
       }),
       headers: new Headers({
         "Content-Type": "application/json",
-        Authorization: `Bearer ${props.token}`,
+        Authorization: `Bearer ${props.sessionToken}`,
       }),
     }).then((res) => {
       props.fetchChores();

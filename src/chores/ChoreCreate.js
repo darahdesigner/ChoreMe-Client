@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button, Form, FormGroup, Label, Input } from "reactstrap";
 import "../App.css";
-import APIURL from "../helpers/environment";
+import APIURL from '../helpers/enviroment';
 
 const ChoreCreate = (props) => {
   const [description, setDescription] = useState("");
@@ -12,6 +12,7 @@ const ChoreCreate = (props) => {
   const [complete, setComplete] = useState("");
 
   const handleSubmit = (e) => {
+    console.log(props.sessionToken)
     e.preventDefault();
     fetch(`${APIURL}/chore/`, {
       method: "POST",
@@ -27,7 +28,7 @@ const ChoreCreate = (props) => {
       }),
       headers: new Headers({
         "Content-Type": "application/json",
-        Authorization: `Bearer ${props.token}`,
+        Authorization: `Bearer ${props.sessionToken}`,
       }),
     })
       .then((res) => res.json())
@@ -100,8 +101,13 @@ const ChoreCreate = (props) => {
             <Input className="createInputs"
               onChange={(e) => setComplete(e.target.value)}
               name="complete"
+              type='select'
               value={complete}
-            />
+            >
+              <option value='Complete'>Complete</option>
+              <option value='NotComplete'>Not Complete</option>
+              <option value='Progress'>In Progress</option>
+            </Input>
           </FormGroup>
           <Button className='createbtn' type="submit">Create</Button>
         </div>
