@@ -33,7 +33,7 @@ const ChoreCreate = (props) => {
     })
       .then((res) => res.json())
       .then((choreData) => {
-        console.log(choreData);
+        //console.log(choreData);
         setDescription("");
         setTitle("");
         setAmount("");
@@ -45,6 +45,7 @@ const ChoreCreate = (props) => {
       });
 
       let newDeadline = newDeadline(deadline.registered.date).toString().substring(4,15);
+      const Deadline = arr => arr.map((sum => value => sum += value)(0));
 
   };
 
