@@ -9,7 +9,7 @@ import {
   ModalHeader,
   ModalBody,
 } from "reactstrap";
-import APIURL from "../helpers/environment";
+import APIURL from '../helpers/enviroment';
 
 const ChoreEdit = (props) => {
   const [editDesc, setEditDesc] = useState(props.choreToUpdate.description);
@@ -90,10 +90,15 @@ const ChoreEdit = (props) => {
           <FormGroup>
             <Label htmlFor="complete">Edit Completion:</Label>
             <Input
-              name="complete"
-              value={editComplete}
               onChange={(e) => setEditComplete(e.target.value)}
-            ></Input>
+              name="complete"
+              type="select"
+              value={editComplete}
+            >
+              <option value="Complete">Complete</option>
+              <option value="NotComplete">Not Complete</option>
+              <option value="Progress">In Progress</option>
+            </Input>
           </FormGroup>
 
           <Button type="submit">Update the chore!</Button>
