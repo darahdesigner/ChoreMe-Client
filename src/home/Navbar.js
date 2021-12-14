@@ -20,7 +20,7 @@ const TopNav = (props) => {
     <div>
       <Main className="main">
         <Content className="content">
-          <h1 className="logo">ChoreMe</h1>
+          <Link className="logo" to='/'><h1 >ChoreMe</h1></Link>
           {props.sessionToken !== "" ? (
             ""
           ) : (

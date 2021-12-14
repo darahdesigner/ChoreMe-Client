@@ -4,7 +4,7 @@ import ChoreCreate from "./ChoreCreate";
 import ChoreTable from "./ChoreTable";
 import ChoreEdit from "./ChoreEdit";
 import "../App.css";
-import APIURL from '../helpers/enviroment';
+import APIURL from "../helpers/enviroment";
 
 const ChoreIndex = (props) => {
   const [chores, setChores] = useState([]);
@@ -23,8 +23,8 @@ const ChoreIndex = (props) => {
     setUpdateActive(false);
   };
 
-  const fetchChores = () => {
-    fetch(`${APIURL}/chore`, {
+  const fetchChores = async () => {
+    await fetch(`${APIURL}/chore`, {
       method: "GET",
       headers: new Headers({
         "Content-Type": "application/json",
@@ -43,7 +43,6 @@ const ChoreIndex = (props) => {
 
   return (
     <div className="chorecon">
-      <h1>{chores.title}</h1>
       <div className="createchores">
         <div className="choreStyle">
           <ChoreCreate
@@ -59,19 +58,19 @@ const ChoreIndex = (props) => {
             fetchChores={fetchChores}
             token={props.token}
           />
+
+          {updateActive ? (
+            <ChoreEdit
+              sessionToken={props.sessionToken}
+              choreToUpdate={choreToUpdate}
+              updateOff={updateOff}
+              token={props.token}
+              fetchChores={fetchChores}
+            />
+          ) : (
+            <></>
+          )}
         </div>
-        <div></div>
-        {updateActive ? (
-          <ChoreEdit
-            sessionToken={props.sessionToken}
-            choreToUpdate={choreToUpdate}
-            updateOff={updateOff}
-            token={props.token}
-            fetchChores={fetchChores}
-          />
-        ) : (
-          <></>
-        )}
       </div>
     </div>
   );

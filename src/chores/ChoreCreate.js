@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button, Form, FormGroup, Label, Input } from "reactstrap";
 import "../App.css";
-import APIURL from '../helpers/enviroment';
+import APIURL from "../helpers/enviroment";
 
 const ChoreCreate = (props) => {
   const [description, setDescription] = useState("");
@@ -12,7 +12,7 @@ const ChoreCreate = (props) => {
   const [complete, setComplete] = useState("");
 
   const handleSubmit = (e) => {
-    console.log(props.sessionToken)
+    console.log(props.sessionToken);
     e.preventDefault();
     fetch(`${APIURL}/chore/`, {
       method: "POST",
@@ -49,12 +49,14 @@ const ChoreCreate = (props) => {
     <div className="choretable">
       <Form className="choreform" onSubmit={handleSubmit}>
         <div className="createbox">
-          <h3 className='createtitle'>Create a chore</h3>
-          <FormGroup className="formstyle">
+          <h3 className="createtitle">Create a chore</h3>
+          <FormGroup className="formstyleTitle">
             <Label htmlFor="title" />
-            <h3 className='chorelabels'>Title:</h3>
+            <h3 className="chorelabels">Title:</h3>
             <Input
-              className="createInputs"
+            required
+            placeholder='Name the chore'
+              className="createInputsTitle"
               onChange={(e) => setTitle(e.target.value)}
               name="title"
               value={title}
@@ -62,54 +64,75 @@ const ChoreCreate = (props) => {
           </FormGroup>
           <FormGroup className="formstyle">
             <Label htmlFor="description" />
-            <h3 className='chorelabels'>Description:</h3>
-            <Input className="createInputs"
+            <h3 className="chorelabelsDesc">Description:</h3>
+            <textarea
+            required
+            placeholder='Description of the chore'
+              className="createInputsDesc"
               onChange={(e) => setDescription(e.target.value)}
               value={description}
-            ></Input>
+            ></textarea>
           </FormGroup>
-          <FormGroup className="formstyle">
-            <Label htmlFor="amount" />
-            <h3 className='chorelabels'>Amount:</h3>
-            <Input className="createInputs"
-              onChange={(e) => setAmount(e.target.value)}
-              name="amount"
-              value={amount}
-            />
-          </FormGroup>
-          <FormGroup className="formstyle">
-            <Label htmlFor="deadline" />
-            <h3 className='chorelabels'>Deadline:<span className='date'>(yyyy/mm/dd)</span></h3>
-            <Input className="createInputs"
-              onChange={(e) => setDeadline(e.target.value)}
-              name="deadline"
-              value={deadline}
-            />
-          </FormGroup>
+          <div className='inputStack'>
           <FormGroup className="formstyle">
             <Label htmlFor="assign" />
-            <h3 className='chorelabels'>Assigned To:</h3>
-            <Input className="createInputs"
+            <h3 className="chorelabelsAssign">Assign:</h3>
+            <Input
+              placeholder='Enter a name'
+              className="createInputsAssign"
               onChange={(e) => setAssign(e.target.value)}
               name="assign"
               value={assign}
             />
           </FormGroup>
           <FormGroup className="formstyle">
+            <Label htmlFor="amount" />
+            <h3 className="chorelabelsAmount">Amount:</h3>
+            <Input
+            placeholder='0.00'
+              className="createInputsAmount"
+              type="number"
+              onChange={(e) => setAmount(e.target.value)}
+              name="amount"
+              value={amount}
+            />
+          </FormGroup>
+          </div>
+          <div className='inputStack2'>
+          <FormGroup className="formstyle">
+            <Label htmlFor="deadline" />
+            <h3 className="chorelabels">
+              Deadline:
+            </h3>
+            <Input
+              className="createInputsDeadline"
+              type="date"
+              value="2018-07-22"
+              onChange={(e) => setDeadline(e.target.value)}
+              name="deadline"
+              value={deadline}
+            />
+          </FormGroup>
+          
+          <FormGroup className="formstyle">
             <Label htmlFor="complete" />
-            <h3 className='chorelabels'>Complete?:</h3>
-            <Input className="createInputs"
+            <h3 className="chorelabelsComplete">Complete?:</h3>
+            <Input
+              className="createInputsComplete"
               onChange={(e) => setComplete(e.target.value)}
               name="complete"
-              type='select'
+              type="select"
               value={complete}
             >
-              <option value='Complete'>Complete</option>
-              <option value='NotComplete'>Not Complete</option>
-              <option value='Progress'>In Progress</option>
+              <option value="Complete">Complete</option>
+              <option value="NotComplete">Not Complete</option>
+              <option value="Progress">In Progress</option>
             </Input>
           </FormGroup>
-          <Button className='createbtn' type="submit">Create</Button>
+          </div>
+          <Button className="createbtn" type="submit">
+            Create
+          </Button>
         </div>
       </Form>
     </div>
