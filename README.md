@@ -87,3 +87,4 @@ Task - Contact Page functional 12/13/21
 Task - Footer functional 12/13/21
 Task - Homepage semi-functional 12/13/21
 Task - favicon and Title updated 12/13/21
+Task - merged all team branches to develop and develop to master.
