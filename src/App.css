@@ -622,7 +622,6 @@ html {
 }
 
 .buttonStyle2 {
-  
   width: 100%;
   display: flex;
   justify-content: center;
@@ -638,4 +637,16 @@ html {
   text-transform: uppercase;
   height: 40px;
   width: 90px;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #e25c48;
+  color: #26353e;
+}
+.contactUsLink {
+  text-align: right;
 }
