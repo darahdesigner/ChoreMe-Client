@@ -42,39 +42,48 @@ Started working on the keep running Amount total MVP requirement.
 
 
 Team Member #2  [Ebone Rich]
-
-              GitHub, LinkedIn, Portfolio links
+ https://github.com/ebone-rich 
+ https://www.linkedin.com/in/ebone-rich/ 
+ https://ebone-rich.github.io/EboneRichPortfolio/
 
 Assigned Tasks
-Make the date input reformat into a standard format.
+User POST (Register)
+Completion Date: [12/1/21]
+[11/27/21]: [Created Register Endpoint]
+[12/1/21]: [Register Endpoint pushed to new github repo]
 
-Completion Date: WIP / [completion date]
-[date]: [focused items / files] */consider your commit message
-[date]: [focused items / files]
-[date]: [focused items / files]
-Ex: 11/29: Navbar.jsx – build out routing and styling.
-Endpoint 2
-Completion Date: WIP / [completion date]
-[date]: [focused items / files]
-[date]: [focused items / files]
-*additional / optional
+User POST (login)
+Completion Date: [12/1/21]
+[11/27/21]: [Created Register Endpoint]
+[12/1/21]: [Login Endpoint pushed to new github repo]
+
  
 
 Team Member #3  [Darah Snider]
 
-              GitHub, LinkedIn, and Portfolio links
+https://github.com/darahdesigner/
+https://www.linkedin.com/in/darahsnider/
+https://darahdesigner.github.io/DarahPortfolio/ [Web Dev Portfolio, I built it in HTML5 and CSS3, using Bootstrap]
+https://darahsnider.myportfolio.com/ [UX/UI, Graphic Design, and Illustration Portfolio, built with Adobe Portfolio]
+
 
 Assigned Tasks
-[WIP]: [Creating the landing page]
-[WIP]: [Creating footer]
-[WIP]: [Creating contact page w/ team github, linkedin, and portfolio pages]
-Completion Date: WIP / [completion date]
-[date]: [focused items / files] */consider your commit message
-[date]: [focused items / files]
-[date]: [focused items / files]
-Ex: 11/29: Navbar.jsx – build out routing and styling.
-Endpoint 2
-Completion Date: WIP / [completion date]
-[date]: [focused items / files]
-[date]: [focused items / files]
-*additional / optional
+Endpoint 1 - Create Chore
+Completion Date:[11/29/21]
+[11/29/21]: [Completed endpoint, pushed to github repo that broke later] 
+
+Endpoint 2 - Get Chores
+Completion Date: [11/29/21]
+[11/29/21]: [Completed endpoint, pushed to github repo that broke later]
+
+Task - Github repos initialized 11/24/2021 
+Task - Github ongoing challenges WIP
+
+Task - Heroku deployment server completed 12/7/21
+Task - Landing page Hifi mockup completed 12/8/21
+Task - Heroku deployment client completed 12/9/21
+Task - Heroku ongoing challenges WIP
+Task - Contact Page functional 12/13/21
+Task - Footer functional 12/13/21
+Task - Homepage semi-functional 12/13/21
+Task - favicon and Title updated 12/13/21
