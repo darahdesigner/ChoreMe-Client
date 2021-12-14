@@ -163,6 +163,16 @@ html {
   margin-top: 100px;
 }
 
+.updateMainBox {
+  position: absolute;
+  top: 0;
+  border: 1px solid white;
+  height: 500px;
+  width: 50%;
+  margin: auto;
+  text-align: center;
+}
+
 .createbox {
   background: rgb(226, 92, 72, 0.1);
   box-shadow: 0px -1px 1px 3px rgb(226, 92, 72, 0.5),
@@ -457,6 +467,7 @@ html {
 .buttonStyle {
   height: 40px;
   width: 100px;
+  margin: auto;
   border: none;
   background: #e25c48;
   border-radius: 10px;
@@ -572,4 +583,70 @@ html {
   font-family: "Sora", sans-serif;
   border: none;
   margin-left: 50px;
+}
+
+.chorecon {
+  position: relative;
+}
+
+.updateMainBox{
+  padding-top: 20px;
+  background: rgb(38, 53, 62, 0.95);
+  border: none;
+  margin-top: -800px;
+  margin-left: 25%;
+  border-radius: 10px;
+  box-shadow: 0px -1px 1px 1px rgb(226, 92, 72),
+  0px -2px 1px 20px rgb(226, 92, 72, 0.4),
+  0px 0px 0px 50px rgb(226, 92, 72, 0.3);
+}
+
+.updateTitle {
+  margin: auto;
+  font-size: 25px;
+  border: 1px solid #e1b899;
+  width: 50%;
+
+  text-align: center;
+  border-radius: 10px;
+  padding: 10px 0;
+  color: #e25c48;
+  font-family: "Sora", sans-serif;
+}
+.updateBody {
+  height: 430px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+}
+
+.buttonStyle2 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.updateBtn {
+  border: none;
+  background: #e25c48;
+  border-radius: 10px;
+  font-family: "Sora", sans-serif;
+  color: #e1b899;
+  text-transform: uppercase;
+  height: 40px;
+  width: 90px;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #e25c48;
+  color: #26353e;
+}
+.contactUsLink {
+  text-align: right;
 }

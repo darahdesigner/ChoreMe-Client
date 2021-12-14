@@ -4,7 +4,7 @@ import ChoreCreate from "./ChoreCreate";
 import ChoreTable from "./ChoreTable";
 import ChoreEdit from "./ChoreEdit";
 import "../App.css";
-import APIURL from '../helpers/enviroment';
+import APIURL from "../helpers/enviroment";
 
 const ChoreIndex = (props) => {
   const [chores, setChores] = useState([]);
@@ -59,19 +59,18 @@ const ChoreIndex = (props) => {
             fetchChores={fetchChores}
             token={props.token}
           />
+          {updateActive ? (
+            <ChoreEdit
+              sessionToken={props.sessionToken}
+              choreToUpdate={choreToUpdate}
+              updateOff={updateOff}
+              token={props.token}
+              fetchChores={fetchChores}
+            />
+          ) : (
+            <></>
+          )}
         </div>
-        <div></div>
-        {updateActive ? (
-          <ChoreEdit
-            sessionToken={props.sessionToken}
-            choreToUpdate={choreToUpdate}
-            updateOff={updateOff}
-            token={props.token}
-            fetchChores={fetchChores}
-          />
-        ) : (
-          <></>
-        )}
       </div>
     </div>
   );
