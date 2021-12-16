@@ -8,7 +8,7 @@ const ChoreTable = (props) => {
   const [byName, setByName] = useState("");
   const [mine, setMine] = useState("");
   const [clear, setClear] = useState(true);
-  // const [showChores, setShowChores] = useState(props.chores)
+
 
   const deleteChore = (chore) => {
     fetch(`${APIURL}/chore/${chore.id}`, {
@@ -24,7 +24,10 @@ const ChoreTable = (props) => {
     clearAssign();
   }, []);
 
+
+
   const choreMapper = () => {
+    
     return props.chores.map((chores, index) => {
       return (
         <div className="historymain">
