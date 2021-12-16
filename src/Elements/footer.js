@@ -1,15 +1,14 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const Footer = () => (
-  <div className="footer">
-        <div className="createdBy">
-             <p>Copyright &copy; 2021. Created by <a href ="./contact.js">Will Harris</a>, <a href ="./contact.js">Ebone Rich</a>, and <a href ="./contact.js">Darah Snider</a>. All rights reserved.</p>
-             <div className="contactUsLink">
-        <a href = "../otherPages/contact.js">Contact Us</a>
-    </div>
-        </div>
-    
-  </div>
-);
+const Footer = () => {
+return (
+    <div className = "persContact">
+      <Link className = "willFooter" to="/contactWill">Contact Will</Link>
+      <Link className = "eboneFooter" to="/contactEbone">Contact Ebone</Link>
+      <Link className = "darahFooter" to="/contactDarah">Contact Darah</Link>
+     </div>
+)};
+
 
 export default Footer;
