@@ -417,3 +417,7 @@ font-family: 'Yantramanav', sans-serif; */
 .contactUsLink {
   text-align: right;
 }
+.landing {
+  font-size: 60px;
+  background-image: url(./assets/Artboard\ 1.png);
+}
