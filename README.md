@@ -44,6 +44,10 @@ Added the placeholder text for final challenge for MVP (running total of amounts
 
 ChoreEdit.js - Got the general styling, and placement laid out. Changed all the inputs to match the CreateChore inputs. 
 
+[12/14/2021]: Having issues witht he fetchChores function.  Wrote some conditionals in ChoreTable.js to show correct components before and after search. 
+
+[12/15/2021]: Resolved issue with the fetchChores.  Chore table is displaying properly now.  All fetchs working.  Created PayButton.js to attempt to complete the MVP with the running total amounts paid. 
+
 
 
 
