@@ -25,7 +25,7 @@ const Signup = (props) => {
       .then((response) => {
         statusCode = response.status;
         console.log(statusCode);
-        if (statusCode == "500") {
+        if (statusCode == 500) {
           setErrorMessage("Failed to register, please try again.");
           console.log(errorMessage);
         }
@@ -34,7 +34,7 @@ const Signup = (props) => {
       })
       .then((data) => {
         props.updateToken(data.sessionToken);
-        if (statusCode == "201") navigate("/choreindex");
+        if (statusCode == 201) navigate("/choreindex");
       });
   };
 

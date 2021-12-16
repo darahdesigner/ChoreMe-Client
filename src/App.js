@@ -10,8 +10,11 @@ import ChoreCreate from "./chores/ChoreCreate";
 import ChoreTable from "./chores/ChoreTable";
 import Footer from "./home/Footer";
 import HomePage from "./home/home";
-import ContactPage from "./Contact/contact";
+import ContactPage from "./Contact/contactWill";
 import Footer from "./Elements/footer"
+import Will from "./Contact/contactWill";
+import Ebone from "./Contact/contactEbone"
+import Darah from "./Contact/contactDarah"
 
 
 function App() {
@@ -85,7 +88,10 @@ function App() {
           <HomePage />
           <ContactPage />
           <Footer />
-
+          <Will />
+          <Ebone />
+          <Darah />
+          </Routes>
         </div>
       </Router>
     </>

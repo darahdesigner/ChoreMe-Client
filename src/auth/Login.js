@@ -25,10 +25,10 @@ const Login = (props) => {
       .then((response) => {
         statusCode = response.status;
         console.log(statusCode);
-        if (statusCode == "401") {
+        if (statusCode == 401) {
           setErrorMessage("Incorrect email or password");
           console.log(errorMessage);
-        } else if (statusCode == "500") {
+        } else if (statusCode == 500) {
           setErrorMessage("Internal error, try again later");
         }
         return response.json();
@@ -36,7 +36,7 @@ const Login = (props) => {
       .then((data) => {
         console.log(errorMessage);
         props.updateToken(data.sessionToken);
-        if (statusCode == "200") navigate("/choreindex");
+        if (statusCode == 200) navigate("/choreindex");
       });
   };
   return (
