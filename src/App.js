@@ -6,15 +6,12 @@ import Signup from "./auth/Signup";
 import Login from "./auth/Login";
 import ChoreIndex from "./chores/ChoreIndex";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import ChoreCreate from "./chores/ChoreCreate";
-import ChoreTable from "./chores/ChoreTable";
-// import Footer from "./home/Footer";
+
+
 
 
 function App() {
   const [sessionToken, setSessionToken] = useState("");
-
-  
 
   useEffect(() => {
     if (localStorage.getItem("token")) {
@@ -32,55 +29,44 @@ function App() {
     setSessionToken("");
   };
 
-  
-
   return (
-    
     <>
       <Router>
         <div>
           <TopNav sessionToken={sessionToken} clickLogout={clearToken}></TopNav>
           <Routes>
-            <Route path="/" element={<Showcase sessionToken={sessionToken} updateToken={updateToken} />} />
+            <Route
+              path="/"
+              element={
+                <Showcase
+                  sessionToken={sessionToken}
+                  updateToken={updateToken}
+                />
+              }
+            />
             <Route
               path="/signup"
-              element={<Signup sessionToken={sessionToken} updateToken={updateToken} />}
+              element={
+                <Signup sessionToken={sessionToken} updateToken={updateToken} />
+              }
             />
             <Route
               path="/login"
-              element={<Login sessionToken={sessionToken} updateToken={updateToken} />}
+              element={
+                <Login sessionToken={sessionToken} updateToken={updateToken} />
+              }
             />
             <Route
               path="/choreindex"
               element={
                 <ChoreIndex
-                sessionToken={sessionToken}
-                  updateToken={updateToken}
-                  
-                />
-              }
-            />
-            <Route
-              path="/chorecreate"
-              element={
-                <ChoreCreate
-                  updateToken={updateToken}
-                  sessionToken={sessionToken}
-                />
-              }
-            />
-            <Route
-              path="/choretable"
-              element={
-                <ChoreTable
-                  updateToken={updateToken}
                   sessionToken={sessionToken}
                 />
               }
             />
           </Routes>
         </div>
-        {/* <Footer /> */}
+        
       </Router>
     </>
   );

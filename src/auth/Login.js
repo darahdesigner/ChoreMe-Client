@@ -10,10 +10,10 @@ const Login = (props) => {
   const navigate = useNavigate();
   const [errorMessage, setErrorMessage] = useState("");
 
-  let handleSubmit = (event) => {
+  let handleSubmit = async (event) => {
     let statusCode;
     event.preventDefault();
-    fetch(`${APIURL}/user/login`, {
+   await fetch(`${APIURL}/user/login`, {
       method: "POST",
       body: JSON.stringify({
         user: { username: username, passwordhash: password },
@@ -25,18 +25,18 @@ const Login = (props) => {
       .then((response) => {
         statusCode = response.status;
         console.log(statusCode);
-        if (statusCode == "401") {
+        {if (statusCode === 401) {
           setErrorMessage("Incorrect email or password");
           console.log(errorMessage);
-        } else if (statusCode == "500") {
+        } else if (statusCode === 500) {
           setErrorMessage("Internal error, try again later");
-        }
+        }}
         return response.json();
       })
       .then((data) => {
         console.log(errorMessage);
         props.updateToken(data.sessionToken);
-        if (statusCode == "200") navigate("/choreindex");
+        if (statusCode === 200) navigate("/choreindex");
       });
   };
   return (

@@ -11,8 +11,9 @@ const Signup = (props) => {
   const [errorMessage, setErrorMessage] = useState("");
 
   let handleSubmit = (event) => {
-    let statusCode;
     event.preventDefault();
+    let statusCode;
+
     fetch(`${APIURL}/user/register`, {
       method: "POST",
       body: JSON.stringify({
@@ -25,8 +26,8 @@ const Signup = (props) => {
       .then((response) => {
         statusCode = response.status;
         console.log(statusCode);
-        if (statusCode == "500") {
-          setErrorMessage("Failed to register, please try again.");
+        if (statusCode === 500) {
+          setErrorMessage("Email is already in use");
           console.log(errorMessage);
         }
 
@@ -34,7 +35,7 @@ const Signup = (props) => {
       })
       .then((data) => {
         props.updateToken(data.sessionToken);
-        if (statusCode == "201") navigate("/choreindex");
+        if (statusCode === 201) navigate("/choreindex");
       });
   };
 
