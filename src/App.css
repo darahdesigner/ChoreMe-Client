@@ -10,6 +10,10 @@ font-family: 'Yantramanav', sans-serif; */
   box-sizing: border-box;
 }
 
+html {
+  background: #26353e;
+}
+
 .auth {
   background-image: url("./assets/blob-scene-haikei.svg");
   background-position: center;
@@ -49,7 +53,7 @@ font-family: 'Yantramanav', sans-serif; */
 }
 
 .form {
-  background: #e25c48;
+  background: #f37251;
   border-radius: 50px;
   box-shadow: 0px -1px 1px 1px rgb(226, 92, 72),
     0px -2px 1px 2px rgb(226, 92, 72, 0.1),
@@ -70,9 +74,10 @@ font-family: 'Yantramanav', sans-serif; */
   border-radius: 10px;
   background-color: #26353e;
   margin-top: 50px;
-  color: #e1b899;
+  color: #0cec1e;
   font-size: 20px;
   font-family: "Montserrat", sans-serif;
+  cursor: pointer;
 }
 
 .formgroups {
@@ -118,6 +123,7 @@ font-family: 'Yantramanav', sans-serif; */
   color: #6de64c;
   letter-spacing: 1px;
   font-size: 15px;
+  cursor: pointer;
 }
 
 .logoutbtn:hover {
@@ -143,13 +149,9 @@ font-family: 'Yantramanav', sans-serif; */
   background: #e1b899;
   color: #26353e;
   transition: 1s;
-  
 }
 
 .chorecon {
-  /* background-image: url("./assets/blob-scene-haikei.svg");
-  background-position: center;
-  background-size: cover; */
   min-height: 100%;
   background: #26353e;
   width: 100%;
@@ -161,20 +163,32 @@ font-family: 'Yantramanav', sans-serif; */
   margin-top: 100px;
 }
 
+.updateMainBox {
+  position: absolute;
+  top: 0;
+  border: 1px solid white;
+  height: 500px;
+  width: 50%;
+  margin: auto;
+  text-align: center;
+}
+
 .createbox {
   background: rgb(226, 92, 72, 0.1);
   box-shadow: 0px -1px 1px 3px rgb(226, 92, 72, 0.5),
     0px -2px 1px 20px rgb(226, 92, 72, 0.1);
   flex-direction: column;
   display: flex;
-  width: 50%;
+  width: 60%;
+  height: 100%;
   border-radius: 20px;
   margin: auto;
-  padding: 30px;
+  padding: 20px;
   border: 1px solid #e1b899;
 }
 
 .createInputs {
+  text-align: center;
   background: #e1b899;
   border: none;
   border-radius: 0px;
@@ -182,14 +196,104 @@ font-family: 'Yantramanav', sans-serif; */
   width: 80%;
   margin: 10px;
 }
-
-/* .createchores {
-  display: flex;
-} */
+.createInputsAmount {
+  text-align: center;
+  background: #e1b899;
+  border: none;
+  border-radius: 0px;
+  height: 20px;
+  width: 30%;
+  margin: 10px;
+}
+.createInputsDeadline {
+  text-align: center;
+  background: #e1b899;
+  border: none;
+  border-radius: 0px;
+  height: 20px;
+  width: 100%;
+  margin-left: 10px;
+}
+.createInputsTitle {
+  text-align: center;
+  background: #e1b899;
+  border: none;
+  border-radius: 0px;
+  height: 25px;
+  width: 40%;
+  margin-left: 10px;
+}
+.createInputsDesc {
+  padding: 10px;
+  background: #e1b899;
+  border: none;
+  border-radius: 0px;
+  height: 70px;
+  width: 75%;
+  margin: 10px;
+}
+.createInputsAssign {
+  text-align: center;
+  background: #e1b899;
+  border: none;
+  border-radius: 0px;
+  height: 20px;
+  width: 100%;
+  margin-left: 10px;
+  margin-right: 50px;
+}
+.createInputsAmount {
+  text-align: center;
+  background: #e1b899;
+  border: none;
+  border-radius: 0px;
+  height: 20px;
+  width: 35.5%;
+  margin-left: 10px;
+}
+.createInputsComplete {
+  text-align: center;
+  background: #e1b899;
+  border: none;
+  border-radius: 0px;
+  height: 20px;
+  width: 70%;
+  margin-left: 10px;
+}
+.chorelabelsAmount {
+  font-size: 15px;
+  color: #6de64c;
+  font-family: "Sora", sans-serif;
+  text-align: center;
+  margin-left: 40px;
+}
+.chorelabelsDesc {
+  font-size: 15px;
+  color: #6de64c;
+  font-family: "Sora", sans-serif;
+  text-align: center;
+  margin-left: 40px;
+}
+.chorelabelsComplete {
+  font-size: 15px;
+  color: #6de64c;
+  font-family: "Sora", sans-serif;
+  text-align: center;
+  margin-left: 60px;
+}
+.chorelabelsAssign {
+  font-size: 15px;
+  color: #6de64c;
+  font-family: "Sora", sans-serif;
+  text-align: center;
+  margin-left: 33px;
+}
 
 .formstyle {
-  text-align: center;
   margin-top: 13px;
+  display: flex;
+  justify-items: center;
+  align-items: center;
 }
 
 .createbtn {
@@ -218,7 +322,7 @@ font-family: 'Yantramanav', sans-serif; */
 
 .choreStyle {
   display: flex;
-  height: 200vh;
+  height: 100%;
   width: 100%;
   justify-content: flex-start;
   flex-direction: column;
@@ -230,6 +334,7 @@ font-family: 'Yantramanav', sans-serif; */
   left: 0;
   margin-left: 100px;
   letter-spacing: 10px;
+  text-decoration: none;
   color: #26353e;
 }
 
@@ -241,26 +346,31 @@ font-family: 'Yantramanav', sans-serif; */
   font-family: "Sora", sans-serif;
 }
 
-.choretable {
-}
+/* .choretable {
+} */
 
 .createtitle {
   text-align: center;
-  font-size: 20px;
+  font-size: 30px;
   font-family: "Sora", sans-serif;
   color: #6de64c;
+  border: 1px solid #e1b899;
+  border-radius: 10px;
+  width: 50%;
+  padding: 10px 20px;
+  margin: auto;
 }
 
 .historytitle {
-  padding-top: 60px;
-  padding-bottom: 10px;
+  padding-top: 20px;
+  padding-bottom: 50px;
   font-size: 32px;
-  font-family: 'Sora', sans-serif;
+  font-family: "Sora", sans-serif;
   color: #6de64c;
   text-align: center;
-  letter-spacing: 5px;
+  letter-spacing: 10px;
   border-bottom: 1px solid #6de64c;
-  width: 40%;
+  width: 30%;
   margin: auto;
 }
 
@@ -278,28 +388,15 @@ font-family: 'Yantramanav', sans-serif; */
 .historybox {
   border: 1px solid #e1b899;
   width: 100%;
-  height: 300px;
-  
+  height: 350px;
+
   /* padding: 20px; */
   display: flex;
   flex-direction: column;
   background: rgb(226, 92, 72, 0.1);
   box-shadow: 0px -1px 1px 3px rgb(226, 92, 72, 0.5),
     0px -2px 1px 4px rgb(226, 92, 72, 0.1);
-    border-radius: 10px;
-}
-
-.historymain {
-  background-color: #26353e;
-  display: flex;
-  position: relative;
-  justify-content: space-around;
-  align-items: center;
   border-radius: 10px;
-  margin-top: 60px;
-  margin-bottom: 0px;
-  width: 100%;
-  height: 100%;
 }
 
 .choreCards {
@@ -315,67 +412,54 @@ font-family: 'Yantramanav', sans-serif; */
   width: 100%;
 }
 
- .cTitle {
-  margin-top: 20px;
+.cTitle {
+  margin-top: 0px;
   font-size: 25px;
   border: 1px solid #e1b899;
-  width: 100%;
+  width: 50%;
+
   text-align: center;
   border-radius: 10px;
   padding: 10px 0;
   color: #e25c48;
   font-family: "Sora", sans-serif;
 }
-/*
+
 .cDescription {
-  position: absolute;
-  top: 0;
-  margin-top: 90px;
   font-size: 15px;
-  text-align: center;
+  padding: 5px 0;
   color: #6de64c;
   font-family: "Sora", sans-serif;
 }
 
 .cAmount {
-  position: absolute;
-  top: 0;
-  margin-top: 115px;
   font-size: 15px;
-  text-align: center;
+  padding: 5px 0;
   color: #6de64c;
   font-family: "Sora", sans-serif;
 }
 
 .cDeadline {
-  position: absolute;
-  top: 0;
-  margin-top: 140px;
   font-size: 15px;
-  text-align: center;
+  padding: 5px 0;
   color: #6de64c;
   font-family: "Sora", sans-serif;
 }
 .cAssign {
-  position: absolute;
-  top: 0;
-  margin-top: 165px;
   font-size: 15px;
-  text-align: center;
+  padding: 5px 0;
   color: #6de64c;
   font-family: "Sora", sans-serif;
 }
 .cComplete {
-  position: absolute;
-  top: 0;
-  margin-top: 190px;
   font-size: 15px;
-  text-align: center;
+  padding: 5px 0;
   color: #6de64c;
   font-family: "Sora", sans-serif;
-} */
+}
 
 .buttons {
+  margin-top: 40px;
   display: flex;
   justify-content: space-around;
 }
@@ -383,10 +467,11 @@ font-family: 'Yantramanav', sans-serif; */
 .buttonStyle {
   height: 40px;
   width: 100px;
+  margin: auto;
   border: none;
   background: #e25c48;
   border-radius: 10px;
-  font-family: 'Sora', sans-serif;
+  font-family: "Sora", sans-serif;
   color: #e1b899;
   text-transform: uppercase;
 }
@@ -396,14 +481,162 @@ font-family: 'Yantramanav', sans-serif; */
 }
 
 .errorMessage {
-  
   background: #e1b899;
   color: #e25c48;
   padding: 10px 20px;
   font-size: 15px;
   border-radius: 5px;
   margin-top: 20px;
-  
+}
+
+.inputStack {
+  display: flex;
+  justify-content: center;
+}
+.inputStack2 {
+  display: flex;
+  justify-content: center;
+  margin-left: -40px;
+}
+
+.formstyleTitle {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.choreitems {
+  margin-top: 20px;
+  margin-left: 20px;
+  padding: 10px;
+  width: 100%;
+}
+
+.titleAlign {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.nameSearchBox {
+  display: flex;
+}
+
+.searchTitle {
+  color: #6de64c;
+  font-family: "Sora", sans-serif;
+  font-size: 15px;
+}
+
+.searchInput{
+  margin-left: 10px;
+  margin-right: 10px;
+  border: none;
+  text-align: center;
+}
+
+.searchBtn {
+  color: #6de64c;
+  font-family: "Sora", sans-serif;
+  border: none;
+  padding: 1px 10px;
+  background: #e25c48;
+  cursor: pointer;
+}
+
+.footerbox {
+  width: 100%;
+  background: #e25c48;
+  margin-top: 100px;
+  position:fixed;
+  bottom: 0;
+  display: flex;
+  height: 40px;
+  color: #e1b899;
+  justify-content: space-around;
+  align-items: center;
+  font-family: "Sora", sans-serif;
+}
+
+.filterBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 20px;
+}
+
+.mineBtn {
+  color: #6de64c;
+  font-family: "Sora", sans-serif;
+  border: none;
+  padding: 1px 10px;
+  background: #e25c48;
+  margin-left: 50px;
+  cursor: pointer;
+}
+
+.payTitle{
+  color: #6de64c;
+  font-family: "Sora", sans-serif;
+  border: none;
+  margin-left: 50px;
+}
+
+.chorecon {
+  position: relative;
+}
+
+.updateMainBox{
+  padding-top: 20px;
+  background: rgb(38, 53, 62, 0.95);
+  border: none;
+  margin-top: -800px;
+  margin-left: 25%;
+  border-radius: 10px;
+  box-shadow: 0px -1px 1px 1px rgb(226, 92, 72),
+  0px -2px 1px 20px rgb(226, 92, 72, 0.4),
+  0px 0px 0px 50px rgb(226, 92, 72, 0.3);
+}
+
+.updateTitle {
+  margin: auto;
+  font-size: 25px;
+  border: 1px solid #e1b899;
+  width: 50%;
+
+  text-align: center;
+  border-radius: 10px;
+  padding: 10px 0;
+  color: #e25c48;
+  font-family: "Sora", sans-serif;
+}
+.updateBody {
+  height: 430px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+}
+
+.buttonStyle2 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.updateBtn {
+  border: none;
+  background: #e25c48;
+  border-radius: 10px;
+  font-family: "Sora", sans-serif;
+  color: #e1b899;
+  text-transform: uppercase;
+  height: 40px;
+  width: 90px;
 }
 
 .footer {
