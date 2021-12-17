@@ -38,7 +38,6 @@ const Signup = (props) => {
       .then((data) => {
         props.updateToken(data.sessionToken);
         if (statusCode === 201) navigate("/choreindex");
-
       });
   };
 

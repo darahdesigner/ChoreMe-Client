@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom'
 const Showcase = () => {
     return (
         <div>
-            {/* <Link to='/Login'><button>Login</button></Link>
+            {/* Showcase
+            <Link to='/Login'><button>Login</button></Link>
             <Link to='/Signup'><button>Signup</button></Link> */}
 
         </div>

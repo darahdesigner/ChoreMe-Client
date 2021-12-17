@@ -9,11 +9,36 @@ font-family: 'Yantramanav', sans-serif; */
   padding: 0;
   box-sizing: border-box;
 }
-
-html {
-  background: #26353e;
+html{
+ align-items: center;
+}
+.homePg{
+  background-image: url(/src/assets/homeBackground.png);
+  background-position: center;
+  background-size: cover;
+  height:90vh;
+}
+.homePg .signupbtn{
+  position:fixed;
+  bottom: 125px;
+  left: 300px;
 }
 
+.homePg .login{
+  border: none;
+  height: 40px;
+  width: 190px;
+  border-radius: 10px;
+  background-color: #26353e;
+  margin-top: 50px;
+  color: #0cec1e;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  cursor: pointer;
+  position: fixed;
+  bottom: 125px;
+  left: 100px;
+}
 .auth {
   background-image: url("./assets/blob-scene-haikei.svg");
   background-position: center;
@@ -652,8 +677,4 @@ html {
 }
 .contactUsLink {
   text-align: right;
-}
-.landing {
-  font-size: 60px;
-  background-image: url(./assets/Artboard\ 1.png);
 }
