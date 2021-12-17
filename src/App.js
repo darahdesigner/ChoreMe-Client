@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import TopNav from "./home/Navbar";
 import "./App.css";
+import HomePage from "./home/home";
 import Showcase from "./Showcase";
 import Signup from "./auth/Signup";
 import Login from "./auth/Login";
@@ -8,13 +9,12 @@ import ChoreIndex from "./chores/ChoreIndex";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import ChoreCreate from "./chores/ChoreCreate";
 import ChoreTable from "./chores/ChoreTable";
-// import Footer from "./home/Footer";
-import HomePage from "./home/home";
-import ContactPage from "./Contact/contactWill";
-import Footer from "./Elements/footer"
-import Will from "./Contact/contactWill";
-import Ebone from "./Contact/contactEbone"
-import Darah from "./Contact/contactDarah"
+
+// import ContactPage from "./Contact/contactWill";
+// import Footer from "./Elements/footer"
+// import Will from "./Contact/contactWill";
+// import Ebone from "./Contact/contactEbone"
+// import Darah from "./Contact/contactDarah"
 
 
 function App() {
@@ -47,7 +47,8 @@ function App() {
         <div>
           <TopNav sessionToken={sessionToken} clickLogout={clearToken}></TopNav>
           <Routes>
-            <Route path="/" element={<Showcase sessionToken={sessionToken} updateToken={updateToken} />} />
+          <Route path="/" element={<HomePage sessionToken={sessionToken} updateToken={updateToken} />} />
+            <Route path="/showcase" element={<Showcase sessionToken={sessionToken} updateToken={updateToken} />} />
             <Route
               path="/signup"
               element={<Signup sessionToken={sessionToken} updateToken={updateToken} />}
@@ -85,14 +86,16 @@ function App() {
               }
 
             />
-          <HomePage />
-          <ContactPage />
+          
+          
+          </Routes>
+        </div>
+        {/* <ContactPage />
           <Footer />
           <Will />
           <Ebone />
-          <Darah />
-          </Routes>
-        </div>
+          <Darah /> */}
+        {/* <HomePage /> */}
       </Router>
     </>
   );

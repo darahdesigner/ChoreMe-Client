@@ -9,8 +9,10 @@ const Auth = (props) => {
 
   return (
     <div className="auth">
+      <body className="auth">
   <Signup updateToken={props.updateToken}/>
-    </div>
+  </body>
+   </div>
   );
 };
 
