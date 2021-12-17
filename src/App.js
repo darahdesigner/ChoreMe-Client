@@ -16,11 +16,8 @@ import ChoreTable from "./chores/ChoreTable";
 // import Ebone from "./Contact/contactEbone"
 // import Darah from "./Contact/contactDarah"
 
-
 function App() {
   const [sessionToken, setSessionToken] = useState("");
-
-  
 
   useEffect(() => {
     if (localStorage.getItem("token")) {
@@ -38,49 +35,37 @@ function App() {
     setSessionToken("");
   };
 
-  
-
   return (
-    
     <>
       <Router>
         <div>
           <TopNav sessionToken={sessionToken} clickLogout={clearToken}></TopNav>
           <Routes>
-          <Route path="/" element={<HomePage sessionToken={sessionToken} updateToken={updateToken} />} />
-            <Route path="/showcase" element={<Showcase sessionToken={sessionToken} updateToken={updateToken} />} />
+            <Route
+              path="/"
+              element={
+                <Showcase
+                  sessionToken={sessionToken}
+                  updateToken={updateToken}
+                />
+              }
+            />
             <Route
               path="/signup"
-              element={<Signup sessionToken={sessionToken} updateToken={updateToken} />}
+              element={
+                <Signup sessionToken={sessionToken} updateToken={updateToken} />
+              }
             />
             <Route
               path="/login"
-              element={<Login sessionToken={sessionToken} updateToken={updateToken} />}
+              element={
+                <Login sessionToken={sessionToken} updateToken={updateToken} />
+              }
             />
             <Route
               path="/choreindex"
               element={
                 <ChoreIndex
-                sessionToken={sessionToken}
-                  updateToken={updateToken}
-                  
-                />
-              }
-            />
-            <Route
-              path="/chorecreate"
-              element={
-                <ChoreCreate
-                  updateToken={updateToken}
-                  sessionToken={sessionToken}
-                />
-              }
-            />
-            <Route
-              path="/choretable"
-              element={
-                <ChoreTable
-                  updateToken={updateToken}
                   sessionToken={sessionToken}
                 />
               }
@@ -93,9 +78,10 @@ function App() {
         {/* <ContactPage />
           <Footer />
           <Will />
-          <Ebone />
-          <Darah /> */}
-        {/* <HomePage /> */}
+          <Darah />
+          </Routes>
+        </div>
+
       </Router>
     </>
   );
