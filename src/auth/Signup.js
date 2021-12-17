@@ -26,8 +26,10 @@ const Signup = (props) => {
       .then((response) => {
         statusCode = response.status;
         console.log(statusCode);
+
         if (statusCode === 500) {
           setErrorMessage("Email is already in use");
+
           console.log(errorMessage);
         }
 
@@ -36,6 +38,7 @@ const Signup = (props) => {
       .then((data) => {
         props.updateToken(data.sessionToken);
         if (statusCode === 201) navigate("/choreindex");
+
       });
   };
 

@@ -25,6 +25,7 @@ const Login = (props) => {
       .then((response) => {
         statusCode = response.status;
         console.log(statusCode);
+
         {if (statusCode === 401) {
           setErrorMessage("Incorrect email or password");
           console.log(errorMessage);
@@ -36,7 +37,9 @@ const Login = (props) => {
       .then((data) => {
         console.log(errorMessage);
         props.updateToken(data.sessionToken);
+
         if (statusCode === 200) navigate("/choreindex");
+
       });
   };
   return (
