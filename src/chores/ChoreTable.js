@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Button, Input, FormGroup, Form } from "reactstrap";
 import "../App.css";
 import APIURL from "../helpers/enviroment";
+import PayButton from "../PayButton";
 
 const ChoreTable = (props) => {
   const [assign, setAssign] = useState("");
@@ -257,7 +258,7 @@ const ChoreTable = (props) => {
             Get My Chores
           </Button>
         </Form>
-        <p className="payTitle">Current Amount Paid:</p>
+        <p className="payTitle">Current Amount Paid: </p>
       </div>
       <h3 className="historytitle">Chore History</h3>
       <div className="cTable">
