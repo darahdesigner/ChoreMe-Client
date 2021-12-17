@@ -9,9 +9,34 @@ font-family: 'Yantramanav', sans-serif; */
   padding: 0;
   box-sizing: border-box;
 }
+html{
+ font-size: 1px;
+}
+.homePg{
+  background-image: url(/src/assets/homeBackground.png);
+  background-position: center;
+  background-size: cover;
+  height:90vh;
+}
+.homePg .signupbtn{
+  position:fixed;
+  bottom: 125px;
+  left: 300px;
+}
 
-html {
-  background: #26353e;
+.homePg .loginbtn{
+  border: none;
+  height: 40px;
+  width: 190px;
+  border-radius: 10px;
+  background-color: #26353e;
+  margin-top: 50px;
+  color: #0cec1e;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  cursor: pointer;
+  position: fixed;
+
 }
 
 .auth {
@@ -621,6 +646,7 @@ html {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  background-image: "/src/assets/homeBackground.png";
 
 }
 
@@ -652,8 +678,4 @@ html {
 }
 .contactUsLink {
   text-align: right;
-}
-.landing {
-  font-size: 60px;
-  background-image: url(./assets/Artboard\ 1.png);
 }
