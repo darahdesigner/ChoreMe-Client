@@ -9,6 +9,7 @@ import {
   ModalHeader,
   ModalBody,
 } from "reactstrap";
+import APIURL from "../helpers/enviroment";
 
 const ChoreEdit = (props) => {
   const [editDesc, setEditDesc] = useState(props.choreToUpdate.description);
@@ -16,11 +17,13 @@ const ChoreEdit = (props) => {
   const [editAmo, setEditAmo] = useState(props.choreToUpdate.amount);
   const [editDead, setEditDead] = useState(props.choreToUpdate.deadline);
   const [editAssign, setEditAssign] = useState(props.choreToUpdate.assign);
-  const [editComplete, setEditComplete] = useState(props.choreToUpdate.complete);
+  const [editComplete, setEditComplete] = useState(
+    props.choreToUpdate.complete
+  );
 
   const choreUpdate = (event, chore) => {
     event.preventDefault();
-    fetch(`http://localhost:3000/chore/${props.choreToUpdate.id}`, {
+    fetch(`${APIURL}/chore/${props.choreToUpdate.id}`, {
       method: "PUT",
       body: JSON.stringify({
         chore: {
@@ -34,20 +37,24 @@ const ChoreEdit = (props) => {
       }),
       headers: new Headers({
         "Content-Type": "application/json",
-        Authorization: `Bearer ${props.token}`,
+        Authorization: `Bearer ${props.sessionToken}`,
       }),
-    }).then((res) => {
-      props.fetchChores();
-      props.updateOff();
-    });
+    })
+      .then((res) => {
+        props.fetchChores();
+        props.updateOff();
+      })
+      .catch((err) => console.log(err));
   };
   return (
-    <Modal isOpen={true}>
-      <ModalHeader>Log a Chore</ModalHeader>
+    <Modal className="updateMainBox" isOpen={true}>
+      <ModalHeader className="updateTitle">Update a Chore</ModalHeader>
       <ModalBody>
-        <Form onSubmit={choreUpdate}>
+        <Form className="updateBody" onSubmit={choreUpdate}>
           <FormGroup>
-            <Label htmlFor="title">Edit Title:</Label>
+            <Label className="chorelabelsAssign" htmlFor="title">
+              Edit Title:
+            </Label>
             <Input
               name="title"
               value={editTit}
@@ -55,7 +62,9 @@ const ChoreEdit = (props) => {
             />
           </FormGroup>
           <FormGroup>
-            <Label htmlFor="description">Edit Description:</Label>
+            <Label className="chorelabelsAssign" htmlFor="description">
+              Edit Description:
+            </Label>
             <Input
               name="description"
               value={editDesc}
@@ -63,23 +72,32 @@ const ChoreEdit = (props) => {
             />
           </FormGroup>
           <FormGroup>
-            <Label htmlFor="amount">Edit Amount:</Label>
+            <Label className="chorelabelsAssign" htmlFor="amount">
+              Edit Amount:
+            </Label>
             <Input
+              type="number"
               name="amount"
               value={editAmo}
               onChange={(e) => setEditAmo(e.target.value)}
             ></Input>
           </FormGroup>
           <FormGroup>
-            <Label htmlFor="deadline">Edit Deadline:</Label>
+            <Label className="chorelabelsAssign" htmlFor="deadline">
+              Edit Deadline:
+            </Label>
             <Input
+              value="2018-07-22"
+              type="date"
               name="deadline"
               value={editDead}
               onChange={(e) => setEditDead(e.target.value)}
             ></Input>
           </FormGroup>
           <FormGroup>
-            <Label htmlFor="assign">Edit Assigned:</Label>
+            <Label className="chorelabelsAssign" htmlFor="assign">
+              Edit Assigned:
+            </Label>
             <Input
               name="assign"
               value={editAssign}
@@ -87,15 +105,25 @@ const ChoreEdit = (props) => {
             ></Input>
           </FormGroup>
           <FormGroup>
-            <Label htmlFor="complete">Edit Completion:</Label>
+            <Label className="chorelabelsAssign" htmlFor="complete">
+              Edit Completion:
+            </Label>
             <Input
-              name="complete"
-              value={editComplete}
               onChange={(e) => setEditComplete(e.target.value)}
-            ></Input>
+              name="complete"
+              type="select"
+              value={editComplete}
+            >
+              <option value="Complete">Complete</option>
+              <option value="Not Complete">Not Complete</option>
+              <option value="In Progress">In Progress</option>
+            </Input>
           </FormGroup>
-
-          <Button type="submit">Update the chore!</Button>
+          <div className="buttonStyle2">
+            <Button className="updateBtn" type="submit">
+              Update
+            </Button>
+          </div>
         </Form>
       </ModalBody>
     </Modal>

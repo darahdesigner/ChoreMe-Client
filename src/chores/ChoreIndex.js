@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Container, Row, Col } from "reactstrap";
+// import { Container, Col } from "reactstrap";
 import ChoreCreate from "./ChoreCreate";
 import ChoreTable from "./ChoreTable";
 import ChoreEdit from "./ChoreEdit";
 import "../App.css";
+import APIURL from "../helpers/enviroment";
 
 const ChoreIndex = (props) => {
   const [chores, setChores] = useState([]);
@@ -23,51 +24,59 @@ const ChoreIndex = (props) => {
   };
 
   const fetchChores = () => {
-    fetch("http://localhost:3000/chore", {
+      fetch(`${APIURL}/chore`, {
       method: "GET",
       headers: new Headers({
         "Content-Type": "application/json",
-        Authorization: `Bearer ${props.token}`,
+        // Authorization: `Bearer ${props.sessionToken}`,
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
       }),
     })
       .then((res) => res.json())
       .then((choreData) => {
+        console.log(choreData)
         setChores(choreData);
-      });
+      }).catch (err => {
+        console.log(err);
+      })
   };
 
   useEffect(() => {
+
+    console.log('log from useEffect')
     fetchChores();
   }, []);
 
   return (
-    <Container className="chorecon">
-      <Col className="createchores">
-        <Col className="choreStyle">
-          <ChoreCreate fetchChores={fetchChores} token={props.token} />
+    <div className="chorecon">
+      <h1>{chores.title}</h1>
+      <div className="createchores">
+        <div className="choreStyle">
+          <ChoreCreate
+            sessionToken={props.sessionToken}
+            fetchChores={fetchChores}
+            
+          />
           <ChoreTable
+            sessionToken={props.sessionToken}
             chores={chores}
             editUpdateChore={editUpdateChore}
             updateOn={updateOn}
             fetchChores={fetchChores}
-            token={props.token}
           />
-        </Col>
-        <Col>
-          
-        </Col>
-        {updateActive ? (
-          <ChoreEdit
-            choreToUpdate={choreToUpdate}
-            updateOff={updateOff}
-            token={props.token}
-            fetchChores={fetchChores}
-          />
-        ) : (
-          <></>
-        )}
-      </Col>
-    </Container>
+          {updateActive ? (
+            <ChoreEdit
+              sessionToken={props.sessionToken}
+              choreToUpdate={choreToUpdate}
+              updateOff={updateOff}
+              fetchChores={fetchChores}
+            />
+          ) : (
+            <></>
+          )}
+        </div>
+      </div>
+    </div>
   );
 };
 

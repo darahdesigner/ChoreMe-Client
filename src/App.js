@@ -17,7 +17,6 @@ import ChoreEdit from "./chores/ChoreEdit";
 // import Ebone from "./Contact/contactEbone"
 // import Darah from "./Contact/contactDarah"
 
-
 function App() {
   const [sessionToken, setSessionToken] = useState("");
 
@@ -39,10 +38,7 @@ function App() {
     setSessionToken("");
   };
 
-  
-
   return (
-    
     <>
       <Router>
         <div>
@@ -86,7 +82,7 @@ function App() {
                 />
               }
               />
-              {/* <Route
+              <Route
               path="/choreedit"
               element={
                 <ChoreEdit
@@ -94,7 +90,7 @@ function App() {
                   sessionToken={sessionToken}
                 />
               }
-            /> */}
+            />
           
           
           </Routes>

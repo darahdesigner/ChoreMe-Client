@@ -78,7 +78,7 @@ html{
 }
 
 .form {
-  background: #e25c48;
+  background: #f37251;
   border-radius: 50px;
   box-shadow: 0px -1px 1px 1px rgb(226, 92, 72),
     0px -2px 1px 2px rgb(226, 92, 72, 0.1),
@@ -99,7 +99,7 @@ html{
   border-radius: 10px;
   background-color: #26353e;
   margin-top: 50px;
-  color: #e1b899;
+  color: #0cec1e;
   font-size: 20px;
   font-family: "Montserrat", sans-serif;
   cursor: pointer;
@@ -650,7 +650,6 @@ html{
 }
 
 .buttonStyle2 {
-  
   width: 100%;
   display: flex;
   justify-content: center;
@@ -666,4 +665,16 @@ html{
   text-transform: uppercase;
   height: 40px;
   width: 90px;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #e25c48;
+  color: #26353e;
+}
+.contactUsLink {
+  text-align: right;
 }
