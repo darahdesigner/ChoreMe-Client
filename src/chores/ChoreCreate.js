@@ -111,10 +111,11 @@ const ChoreCreate = (props) => {
             <Input
               className="createInputsDeadline"
               type="date"
-              value="2018-07-22"
+              value="2021-12-22"
+              value={deadline}
               onChange={(e) => setDeadline(e.target.value)}
               name="deadline"
-              value={deadline}
+              
 
             />
           </FormGroup>
@@ -130,8 +131,8 @@ const ChoreCreate = (props) => {
               value={complete}
             >
               <option value="Complete">Complete</option>
-              <option value="NotComplete">Not Complete</option>
-              <option value="Progress">In Progress</option>
+              <option value="Not Complete">Not Complete</option>
+              <option value="In Progress">In Progress</option>
             </Input>
           </FormGroup>
           </div>

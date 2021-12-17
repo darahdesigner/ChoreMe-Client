@@ -23,22 +23,28 @@ const ChoreIndex = (props) => {
     setUpdateActive(false);
   };
 
-  const fetchChores = async () => {
-    await fetch(`${APIURL}/chore`, {
+  const fetchChores = () => {
+      fetch(`${APIURL}/chore`, {
       method: "GET",
       headers: new Headers({
         "Content-Type": "application/json",
-        Authorization: `Bearer ${props.sessionToken}`,
+        // Authorization: `Bearer ${props.sessionToken}`,
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
       }),
     })
       .then((res) => res.json())
       .then((choreData) => {
+        console.log(choreData)
         setChores(choreData);
-      });
+      }).catch (err => {
+        console.log(err);
+      })
   };
 
   useEffect(() => {
- //   fetchChores();
+
+    console.log('log from useEffect')
+    fetchChores();
   }, []);
 
   return (
@@ -49,7 +55,7 @@ const ChoreIndex = (props) => {
           <ChoreCreate
             sessionToken={props.sessionToken}
             fetchChores={fetchChores}
-            token={props.token}
+            
           />
           <ChoreTable
             sessionToken={props.sessionToken}
@@ -57,14 +63,12 @@ const ChoreIndex = (props) => {
             editUpdateChore={editUpdateChore}
             updateOn={updateOn}
             fetchChores={fetchChores}
-            token={props.token}
           />
           {updateActive ? (
             <ChoreEdit
               sessionToken={props.sessionToken}
               choreToUpdate={choreToUpdate}
               updateOff={updateOff}
-              token={props.token}
               fetchChores={fetchChores}
             />
           ) : (
