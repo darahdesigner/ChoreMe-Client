@@ -1,15 +1,20 @@
 import React, { useState } from "react";
-import styled from "styled-components";
 import { Form, FormGroup, Label, Input, Button } from "reactstrap";
+import { Link, useNavigate } from "react-router-dom";
 import "../App.css";
+import APIURL from "../helpers/enviroment";
 
 const Signup = (props) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+  const [errorMessage, setErrorMessage] = useState("");
 
   let handleSubmit = (event) => {
     event.preventDefault();
-    fetch("http://localhost:3000/user/register", {
+    let statusCode;
+
+    fetch(`${APIURL}/user/register`, {
       method: "POST",
       body: JSON.stringify({
         user: { username: username, passwordhash: password },
@@ -18,25 +23,44 @@ const Signup = (props) => {
         "Content-Type": "application/json",
       }),
     })
-      .then((response) => response.json())
+      .then((response) => {
+        statusCode = response.status;
+        console.log(statusCode);
+        if (statusCode === 500) {
+          setErrorMessage("Email is already in use");
+          console.log(errorMessage);
+        }
+
+        return response.json();
+      })
       .then((data) => {
         props.updateToken(data.sessionToken);
+        if (statusCode === 201) navigate("/choreindex");
       });
   };
 
   return (
-    <div className="auth"><h1 className='signupline'>Create and organize your chores in one easy place!</h1>
+    <div className="auth">
+      <h1 className="signupline">
+        Create and organize your chores in one easy place!
+      </h1>
       <div className="authcon">
-        
         <Form className="form" onSubmit={handleSubmit}>
           <div className="formgroups">
-            <h1 className="title">Sign up for your free account.</h1>
+            <h1 className="title">Sign up for your free account</h1>
+            {errorMessage !== "" ? (
+              <p className="errorMessage">{errorMessage}</p>
+            ) : (
+              ""
+            )}
             <FormGroup>
               <Label className="user" htmlFor="username">
-                Username:
+                Email:
               </Label>
               <Input
-                placeholder='Enter a username'
+                required
+                type="email"
+                placeholder="Enter an email"
                 className="signupInputs"
                 onChange={(e) => setUsername(e.target.value)}
                 name="username"
@@ -48,7 +72,9 @@ const Signup = (props) => {
                 Password:
               </Label>
               <Input
-                placeholder='Enter a password'
+                required
+                type="password"
+                placeholder="Enter a password"
                 className="signupInputs"
                 onChange={(e) => setPassword(e.target.value)}
                 name="password"
@@ -58,7 +84,15 @@ const Signup = (props) => {
             <Button className="signupbtn" type="submit">
               Create Account
             </Button>
-            <p className='AlreadyUser'>Already a user? Login <span className='link'>here</span>!</p>
+            <p className="AlreadyUser">
+              Already a user? Login
+              <span className="link">
+                <Link className="alink" to="/login">
+                  here
+                </Link>
+              </span>
+              !
+            </p>
           </div>
         </Form>
       </div>
