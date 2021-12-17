@@ -75,13 +75,6 @@ function App() {
           
           </Routes>
         </div>
-        {/* <ContactPage />
-          <Footer />
-          <Will />
-          <Darah />
-          </Routes>
-        </div>
-
       </Router>
     </>
   );
