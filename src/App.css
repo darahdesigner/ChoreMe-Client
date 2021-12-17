@@ -24,7 +24,7 @@ html{
   left: 300px;
 }
 
-.homePg .loginbtn{
+.homePg .login{
   border: none;
   height: 40px;
   width: 190px;
@@ -36,6 +36,8 @@ html{
   font-family: "Montserrat", sans-serif;
   cursor: pointer;
   position: fixed;
+  bottom: 125px;
+  left: 100px;
 
 }
 
