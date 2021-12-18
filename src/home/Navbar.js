@@ -21,17 +21,17 @@ const TopNav = (props) => {
       <Main className="main">
         <Content className="content">
           <Link className="logo" to='/'><h1 >ChoreMe</h1></Link>
-          {props.sessionToken !== "" ? (
-            ""
-          ) : (
+          {props.sessionToken === "" && props.sessionToken !== 'undefined' ? (
             <Link to="/login">
-              <button className="logoutbtn" type="submit">
-                Login
-              </button>
-            </Link>
+            <button className="logoutbtn" type="submit">
+              Login
+            </button>
+          </Link>
+          ) : (
+            ''
           )}
           <Link to="/">
-          {props.sessionToken !== "" ? (
+          {props.sessionToken !== "" && props.sessionToken? (
             <Link to="/">
             <button onClick={props.clickLogout} className="logoutbtn" type="submit">
               Logout

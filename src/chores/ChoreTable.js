@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Button, Input, FormGroup, Form } from "reactstrap";
 import "../App.css";
 import APIURL from "../helpers/enviroment";
-import PayButton from "../PayButton";
+import moment from "moment";
 
 const ChoreTable = (props) => {
   const [assign, setAssign] = useState("");
@@ -25,9 +25,8 @@ const ChoreTable = (props) => {
     clearAssign();
   }, []);
 
-
-
   const choreMapper = () => {
+   
     
     return props.chores.map((chores, index) => {
       return (
@@ -46,7 +45,7 @@ const ChoreTable = (props) => {
               </div>
               <div key="{deadline}" className="cDeadline">
                 Deadline:{" "}
-                <span className="chorecontent">{chores.deadline}</span>
+                <span className="chorecontent">{moment.parseZone(chores.deadline).format('MMMM Do YYYY')}</span>
               </div>
               <div key="{assign}" className="cAssign">
                 Assigned To:{" "}
@@ -137,7 +136,7 @@ const ChoreTable = (props) => {
               </div>
               <div key="{deadline}" className="cDeadline">
                 Deadline:{" "}
-                <span className="chorecontent">{assign.deadline}</span>
+                <span className="chorecontent">{moment.parseZone(assign.deadline).format('MMMM Do YYYY')}</span>
               </div>
               <div key="{assign}" className="cAssign">
                 Assigned To:{" "}
@@ -154,7 +153,7 @@ const ChoreTable = (props) => {
                 className="buttonStyle"
                 onClick={() => {
                   props.editUpdateChore(assign);
-                  props.updateOn();
+                  props.updateOn()
                 }}
                 color="warning"
               >
@@ -194,7 +193,7 @@ const ChoreTable = (props) => {
                 Amount: <span className="chorecontent">{mine.amount}</span>
               </div>
               <div key="{deadline}" className="cDeadline">
-                Deadline: <span className="chorecontent">{mine.deadline}</span>
+                Deadline: <span className="chorecontent">{moment.parseZone(mine.deadline).format('MMMM Do YYYY')}</span>
               </div>
               <div key="{assign}" className="cAssign">
                 Assigned To: <span className="chorecontent">{mine.assign}</span>
@@ -231,8 +230,11 @@ const ChoreTable = (props) => {
   };
 
   const clearAssign = () => {
+    setClear(true);
     setAssign("");
   };
+
+ 
 
   return (
     <div className="chorehistorybox">
@@ -285,6 +287,9 @@ const ChoreTable = (props) => {
         ) : (
           <div></div>
         )}
+
+        {props.chores.length === 0 ? <div className="noChores">No chores created.</div> : <div></div>}
+
       </div>
     </div>
   );

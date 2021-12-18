@@ -33,7 +33,7 @@ const ChoreCreate = (props) => {
     })
       .then((res) => res.json())
       .then((choreData) => {
-        console.log(choreData);
+        //console.log(choreData);
         setDescription("");
         setTitle("");
         setAmount("");
@@ -43,7 +43,7 @@ const ChoreCreate = (props) => {
 
         props.fetchChores();
       });
-  };
+      };
 
   return (
     <div className="choretable">
@@ -112,6 +112,7 @@ const ChoreCreate = (props) => {
               onChange={(e) => setDeadline(e.target.value)}
               name="deadline"
               
+
             />
           </FormGroup>
           

@@ -42,12 +42,14 @@ const ChoreIndex = (props) => {
   };
 
   useEffect(() => {
+
     console.log('log from useEffect')
     fetchChores();
   }, []);
 
   return (
     <div className="chorecon">
+      <h1>{chores.title}</h1>
       <div className="createchores">
         <div className="choreStyle">
           <ChoreCreate
@@ -62,7 +64,6 @@ const ChoreIndex = (props) => {
             updateOn={updateOn}
             fetchChores={fetchChores}
           />
-
           {updateActive ? (
             <ChoreEdit
               sessionToken={props.sessionToken}

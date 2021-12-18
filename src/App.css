@@ -9,11 +9,37 @@ font-family: 'Yantramanav', sans-serif; */
   padding: 0;
   box-sizing: border-box;
 }
-
-html {
-  background: #26353e;
+html{
+ align-items: center;
+}
+.homePg{
+  background-image: url(/src/assets/homeBackground.png);
+  background-position: center;
+  background-size: cover;
+  height:90vh;
+  postion: relative;
+}
+.homePg .signupbtn{
+  position:absolute;
+  bottom: 125px;
+  left: 300px;
 }
 
+.homePg .login{
+  border: none;
+  height: 40px;
+  width: 190px;
+  border-radius: 10px;
+  background-color: #26353e;
+  margin-top: 50px;
+  color: #0cec1e;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  cursor: pointer;
+  position: absolute;
+  bottom: 125px;
+  left: 100px;
+}
 .auth {
   background-image: url("./assets/blob-scene-haikei.svg");
   background-position: center;
@@ -33,9 +59,7 @@ html {
   letter-spacing: 2px;
   font-family: "Montserrat", sans-serif;
   border-bottom: 1px solid #26353e;
-  border-top: 1px solid #26353e;
-  padding: 10px 20px;
-  border-radius: 10px;
+  padding: 10px;
 }
 
 .user {
@@ -53,7 +77,7 @@ html {
 }
 
 .form {
-  background: #e25c48;
+  background: #f37251;
   border-radius: 50px;
   box-shadow: 0px -1px 1px 1px rgb(226, 92, 72),
     0px -2px 1px 2px rgb(226, 92, 72, 0.1),
@@ -74,7 +98,7 @@ html {
   border-radius: 10px;
   background-color: #26353e;
   margin-top: 50px;
-  color: #e1b899;
+  color: #0cec1e;
   font-size: 20px;
   font-family: "Montserrat", sans-serif;
   cursor: pointer;
@@ -103,7 +127,7 @@ html {
 .AlreadyUser {
   margin-top: 30px;
   font-family: "Montserrat", sans-serif;
-  color: #e1b899;
+  color: white;
 }
 
 .alink {
@@ -142,7 +166,6 @@ html {
   color: #6de64c;
   letter-spacing: 1px;
   font-size: 15px;
-  display: none;
 }
 
 .loginbtn:hover {
@@ -308,6 +331,7 @@ html {
   color: #6de64c;
   background-color: #26353e;
   border-radius: 10px;
+  cursor: pointer;
 }
 
 .chorehistorybox {
@@ -317,7 +341,8 @@ html {
   height: 100%;
   flex-direction: column;
   justify-content: center;
-  margin-top: 40px;
+  margin-top: 60px;
+  margin-bottom: 40px;
 }
 
 .choreStyle {
@@ -343,11 +368,11 @@ html {
   margin-left: 100px;
   color: #e1b899;
   font-size: 40px;
-  font-family: "Sora", sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
-.choretable {
-}
+/* .choretable {
+} */
 
 .createtitle {
   text-align: center;
@@ -369,7 +394,7 @@ html {
   color: #6de64c;
   text-align: center;
   letter-spacing: 10px;
-  border-bottom: 1px solid #6de64c;
+  
   width: 30%;
   margin: auto;
 }
@@ -468,13 +493,14 @@ html {
 .buttonStyle {
   height: 40px;
   width: 100px;
-  margin: auto;
+  margin-bottom: 20px;
   border: none;
   background: #e25c48;
   border-radius: 10px;
   font-family: "Sora", sans-serif;
   color: #e1b899;
   text-transform: uppercase;
+  cursor: pointer;
 }
 
 .chorecontent {
@@ -625,7 +651,6 @@ html {
 }
 
 .buttonStyle2 {
-  
   width: 100%;
   display: flex;
   justify-content: center;
@@ -641,4 +666,44 @@ html {
   text-transform: uppercase;
   height: 40px;
   width: 90px;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #e25c48;
+  color: #26353e;
+}
+.contactUsLink {
+  text-align: right;
+}
+
+
+.persContact {
+  display: flex;
+  height: 5vh;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background: #e25c48;
+  text-decoration: none;
+  color: #26353e;
+  font-size: 15px;
+  font-family: "Sora", sans-serif;
+}
+
+.namesFooter {
+  text-decoration: none;
+  color: #26353e;
+  border: 1px solid #e1b899;
+  padding: 5px 20px;
+}
+
+.noChores {
+  text-align: center;
+  font-size: 30px;
+  font-family: "Sora", sans-serif;
+  color: #6de64c;
 }
