@@ -1,19 +1,16 @@
 {
-  "name": "choreme",
+  "name": "workout-log",
   "version": "0.1.0",
   "private": true,
-  "type": "module",
   "dependencies": {
-    "@testing-library/jest-dom": "^5.16.1",
+    "@testing-library/jest-dom": "^5.15.0",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
-    "dotenv": "^10.0.0",
+    "bootstrap": "^5.1.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-router-dom": "^6.2.1",
     "react-scripts": "4.0.3",
     "reactstrap": "^9.0.1",
-    "styled-components": "^5.3.3",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
@@ -39,21 +36,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "description": "Project Name: ChoreMe Client [Client side for a Chore Application that allows you to create and assign Chores].",
-  "main": "index.js",
-  "engines": {
-    "node": "14/x"
   }
-  "devDependencies": {},
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/darahdesigner/Client-ChoreMe.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/darahdesigner/Client-ChoreMe/issues"
-  },
-  "homepage": "https://github.com/darahdesigner/Client-ChoreMe#readme"
 }
