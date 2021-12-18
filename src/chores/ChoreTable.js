@@ -9,7 +9,9 @@ const ChoreTable = (props) => {
   const [byName, setByName] = useState("");
   const [mine, setMine] = useState("");
   const [clear, setClear] = useState(true);
-
+  const [total, setTotal] = useState(0);
+  const [newTotal, setNewTotal] = useState(total);
+  const [mainTotal, setMainTotal] = useState() 
 
   const deleteChore = (chore) => {
     fetch(`${APIURL}/chore/${chore.id}`, {
@@ -25,10 +27,22 @@ const ChoreTable = (props) => {
     clearAssign();
   }, []);
 
+  useEffect(()=>{
+    setMainTotal(newTotal)
+  }, [newTotal])
+
   const choreMapper = () => {
-   
-    
     return props.chores.map((chores, index) => {
+
+      const handleAmount = () => {
+        const arr = [newTotal];
+        arr.push(chores.amount)
+        setTotal(chores.amount);
+        setNewTotal(chores.amount + total)
+        console.log(total);
+        console.log(arr)
+
+      };
       return (
         <div className="historymain">
           <div className="historybox" key={index}>
@@ -41,11 +55,14 @@ const ChoreTable = (props) => {
                 <span className="chorecontent"> {chores.description}</span>
               </div>
               <div key="{amount}" className="cAmount">
-                Amount: <span className="chorecontent">{chores.amount}</span>
-              </div>
+                Amount: <span className="chorecontent">{chores.amount}</span> <button className='payBtn' onClick={handleAmount}>Pay</button>
+              </div>{" "}
+             
               <div key="{deadline}" className="cDeadline">
                 Deadline:{" "}
-                <span className="chorecontent">{moment.parseZone(chores.deadline).format('MMMM Do YYYY')}</span>
+                <span className="chorecontent">
+                  {moment.parseZone(chores.deadline).format("MMMM Do YYYY")}
+                </span>
               </div>
               <div key="{assign}" className="cAssign">
                 Assigned To:{" "}
@@ -100,6 +117,16 @@ const ChoreTable = (props) => {
   };
 
   const handleMine = (e) => {
+
+    const handleAmount = () => {
+      const arr = [newTotal];
+      arr.push(assign.amount)
+      setTotal(assign.amount);
+      setNewTotal(assign.amount + total)
+      console.log(total);
+      console.log(arr)
+
+    };
     e.preventDefault();
     fetch(`${APIURL}/chore/mine/:owner_id`, {
       method: "GET",
@@ -117,6 +144,16 @@ const ChoreTable = (props) => {
   };
 
   const nameMapper = () => {
+
+    const handleAmount = () => {
+      const arr = [newTotal];
+      arr.push(assign.amount)
+      setTotal(assign.amount);
+      setNewTotal(assign.amount + total)
+      console.log(total);
+      console.log(arr)
+
+    };
     return assign.map((assign, index) => {
       return (
         <div className="historymain" key={index}>
@@ -132,11 +169,13 @@ const ChoreTable = (props) => {
                 <span className="chorecontent"> {assign.description}</span>
               </div>
               <div key="{amount}" className="cAmount">
-                Amount: <span className="chorecontent">{assign.amount}</span>
+                Amount: <span className="chorecontent">{assign.amount}</span><button className='payBtn' onClick={handleAmount}>Pay</button>
               </div>
               <div key="{deadline}" className="cDeadline">
                 Deadline:{" "}
-                <span className="chorecontent">{moment.parseZone(assign.deadline).format('MMMM Do YYYY')}</span>
+                <span className="chorecontent">
+                  {moment.parseZone(assign.deadline).format("MMMM Do YYYY")}
+                </span>
               </div>
               <div key="{assign}" className="cAssign">
                 Assigned To:{" "}
@@ -153,7 +192,7 @@ const ChoreTable = (props) => {
                 className="buttonStyle"
                 onClick={() => {
                   props.editUpdateChore(assign);
-                  props.updateOn()
+                  props.updateOn();
                 }}
                 color="warning"
               >
@@ -176,6 +215,16 @@ const ChoreTable = (props) => {
 
   const mineMapper = () => {
     return mine.map((mine, index) => {
+
+      const handleAmount = () => {
+        const arr = [newTotal];
+        arr.push(mine.amount)
+        setTotal(mine.amount);
+        setNewTotal(mine.amount + total)
+        console.log(total);
+        console.log(arr)
+  
+      };
       return (
         <div className="historymain" key={index}>
           <div className="historybox">
@@ -190,10 +239,13 @@ const ChoreTable = (props) => {
                 <span className="chorecontent"> {mine.description}</span>
               </div>
               <div key="{amount}" className="cAmount">
-                Amount: <span className="chorecontent">{mine.amount}</span>
+                Amount: <span className="chorecontent">{mine.amount}</span><button className='payBtn' onClick={handleAmount}>Pay</button>
               </div>
               <div key="{deadline}" className="cDeadline">
-                Deadline: <span className="chorecontent">{moment.parseZone(mine.deadline).format('MMMM Do YYYY')}</span>
+                Deadline:{" "}
+                <span className="chorecontent">
+                  {moment.parseZone(mine.deadline).format("MMMM Do YYYY")}
+                </span>
               </div>
               <div key="{assign}" className="cAssign">
                 Assigned To: <span className="chorecontent">{mine.assign}</span>
@@ -234,8 +286,6 @@ const ChoreTable = (props) => {
     setAssign("");
   };
 
- 
-
   return (
     <div className="chorehistorybox">
       <div className="filterBox">
@@ -260,7 +310,7 @@ const ChoreTable = (props) => {
             Get My Chores
           </Button>
         </Form>
-        <p className="payTitle">Current Amount Paid: </p>
+        <p className="payTitle">Current Amount Paid:<span className='totalsep'>{mainTotal}</span> </p>
       </div>
       <h3 className="historytitle">Chore History</h3>
       <div className="cTable">
@@ -288,8 +338,11 @@ const ChoreTable = (props) => {
           <div></div>
         )}
 
-        {props.chores.length === 0 ? <div className="noChores">No chores created.</div> : <div></div>}
-
+        {props.chores.length === 0 ? (
+          <div className="noChores">No chores created.</div>
+        ) : (
+          <div></div>
+        )}
       </div>
     </div>
   );

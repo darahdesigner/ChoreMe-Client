@@ -8,9 +8,11 @@ const Footer = () => {
 
 return (
     <div className = "persContact">
-      <a className = "namesFooter" href="https://williambharris.github.io/">Contact Will</a>
-      <a className = "namesFooter" href="/contactEbone">Contact Ebone</a>
-      <a className = "namesFooter" href="/contactDarah">Contact Darah</a>
+      <p>ChoreMe Copyright 2001&copy;</p>
+      <p>Created By:</p>
+      <a className = "namesFooter" href="https://williambharris.github.io/">Will Harris</a>
+      <a className = "namesFooter" href="/contactEbone">Ebone Rich</a>
+      <a className = "namesFooter" href="/contactDarah">Darah Snider</a>
      </div>
 )};
 

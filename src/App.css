@@ -707,3 +707,15 @@ html{
   font-family: "Sora", sans-serif;
   color: #6de64c;
 }
+
+.payBtn {
+  border: none;
+  padding: 2px 5px;
+  margin-left: 10px;
+  background: #e25c48;
+  color: #0cec1e;
+}
+
+.totalsep {
+  margin-left: 10px;
+}
