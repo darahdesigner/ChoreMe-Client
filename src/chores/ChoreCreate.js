@@ -44,11 +44,11 @@ const ChoreCreate = (props) => {
         props.fetchChores();
       });
 
-      let newDeadline = new Deadline(deadline.registered.date).toString().substring(4,15); //separated new & Deadline in delcaration - DS
+      let newDeadline = newDeadline(deadline.registered.date).toString().substring(4,15);
       const Deadline = arr => arr.map((sum => value => sum += value)(0));
-     
 
   };
+
   return (
     <div className="choretable">
       <Form className="choreform" onSubmit={handleSubmit}>
