@@ -1,5 +1,4 @@
-import React from 'react';  //NEW CODE
-import /*React,*/ { useState } from "react";
+import React, { useState } from "react";
 import { Form, FormGroup, Label, Input, Button } from "reactstrap";
 import "../App.css";
 import { Link, useNavigate } from "react-router-dom";
@@ -11,22 +10,21 @@ const Login = (props) => {
   const navigate = useNavigate();
   const [errorMessage, setErrorMessage] = useState("");
 
-  let handleSubmit = (event) => {
+  let handleSubmit = async (event) => {
     let statusCode;
     event.preventDefault();
-   fetch(`${APIURL}/user/login`, {
+   await fetch(`${APIURL}/user/login`, {
       method: "POST",
       body: JSON.stringify({
-        user: { username: username, passwordhash: password },   
+        user: { username: username, passwordhash: password },
       }),
       headers: new Headers({
         "Content-Type": "application/json",
-      })
+      }),
     })
       .then((response) => {
-        statusCode = (`${response.status}`);
+        statusCode = response.status;
         console.log(statusCode);
-       
         {if (statusCode === 401) {
           setErrorMessage("Incorrect email or password");
           console.log(errorMessage);
