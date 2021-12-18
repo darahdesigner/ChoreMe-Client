@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React from 'react';  //NEW CODE
+import /*React,*/ { useState } from "react";
 import { Form, FormGroup, Label, Input, Button } from "reactstrap";
 import "../App.css";
 import { Link, useNavigate } from "react-router-dom";
@@ -11,20 +12,22 @@ const Login = (props) => {
   const [errorMessage, setErrorMessage] = useState("");
 
   let handleSubmit = async (event) => {
+    event.preventDefault(); //NEW CODE
     let statusCode;
     event.preventDefault();
    await fetch(`${APIURL}/user/login`, {
       method: "POST",
       body: JSON.stringify({
-        user: { username: username, passwordhash: password },
+        user: { username: values.username, passwordhash: values.password },   //added values.
       }),
-      headers: new Headers({
+      headers: /*new Headers*/({
         "Content-Type": "application/json",
-      }),
+      })
     })
       .then((response) => {
-        statusCode = response.status;
+        statusCode = (`${response.status}`);
         console.log(statusCode);
+        console.log(`${response.status} this is console.log response.status. The one above is statusCode`)
         {if (statusCode === 401) {
           setErrorMessage("Incorrect email or password");
           console.log(errorMessage);
