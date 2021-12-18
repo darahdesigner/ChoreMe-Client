@@ -42,6 +42,9 @@
   },
   "description": "Project Name: ChoreMe Client [Client side for a Chore Application that allows you to create and assign Chores].",
   "main": "index.js",
+  "engines": {
+    "node": "14/x"
+  }
   "devDependencies": {},
   "repository": {
     "type": "git",
