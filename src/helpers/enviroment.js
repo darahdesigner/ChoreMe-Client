@@ -5,7 +5,7 @@ switch (window.location.hostname) {
         APIURL = 'http://localhost:3000';
         break;
         case 'dls-choreme-client.herokuapp.com':
-        APIURL = 'https://dls-choreme-server.herokuapp.com'
+        APIURL = 'https://dls-choreme-client.herokuapp.com/'
 }
 
 export default APIURL;
