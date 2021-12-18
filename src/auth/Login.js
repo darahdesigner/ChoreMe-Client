@@ -16,7 +16,7 @@ const Login = (props) => {
    await fetch(`${APIURL}/user/login`, {
       method: "POST",
       body: JSON.stringify({
-        user: { username: username, passwordhash: password },
+        user: { username: username, password: password },
       }),
       headers: new Headers({
         "Content-Type": "application/json",
@@ -60,7 +60,7 @@ const Login = (props) => {
                 type="email"
                 placeholder="Enter an email"
                 className="signupInputs"
-                onChange={(e) => setUsername(e.target.value)}
+                onChange={(e) => setEmail(e.target.value)}
                 name="username"
                 value={username}
               />

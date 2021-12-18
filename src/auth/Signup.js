@@ -17,7 +17,7 @@ const Signup = (props) => {
     fetch(`${APIURL}/user/register`, {
       method: "POST",
       body: JSON.stringify({
-        user: { username: username, passwordhash: password },
+        user: { username: username, password: password },
       }),
       headers: new Headers({
         "Content-Type": "application/json",
