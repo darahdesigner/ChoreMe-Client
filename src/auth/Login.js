@@ -11,23 +11,22 @@ const Login = (props) => {
   const navigate = useNavigate();
   const [errorMessage, setErrorMessage] = useState("");
 
-  let handleSubmit = async (event) => {
-    event.preventDefault(); //NEW CODE
+  let handleSubmit = (event) => {
     let statusCode;
     event.preventDefault();
-   await fetch(`${APIURL}/user/login`, {
+   fetch(`${APIURL}/user/login`, {
       method: "POST",
       body: JSON.stringify({
-        user: { username: values.username, passwordhash: values.password },   //added values.
+        user: { username: username, passwordhash: password },   
       }),
-      headers: /*new Headers*/({
+      headers: new Headers({
         "Content-Type": "application/json",
       })
     })
       .then((response) => {
         statusCode = (`${response.status}`);
         console.log(statusCode);
-        console.log(`${response.status} this is console.log response.status. The one above is statusCode`)
+       
         {if (statusCode === 401) {
           setErrorMessage("Incorrect email or password");
           console.log(errorMessage);
