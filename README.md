@@ -48,6 +48,14 @@ ChoreEdit.js - Got the general styling, and placement laid out. Changed all the 
 
 [12/15/2021]: Resolved issue with the fetchChores.  Chore table is displaying properly now.  All fetchs working.  Created PayButton.js to attempt to complete the MVP with the running total amounts paid. 
 
+[12/17/2021] : Worked on the footer, and provided contact.  Made ChoreTable show no chore history if no chores have been created by the user.
+
+Modified the date input, to show name of month followed by day, and year.
+
+Worked on the Total amount paid feature. Was able to get it partially working.
+
+Edited Signup.js and Login.js to improve contrast.
+
 
 
 
